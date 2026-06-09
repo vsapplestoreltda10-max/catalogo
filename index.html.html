@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Versus Tech Gamer | Oficial</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary: #ae52ff; --dark: #050505; --card: #111; --green: #25D366; --glass: rgba(174, 82, 255, 0.2); }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { background: var(--dark); color: white; overflow-x: hidden; scroll-behavior: smooth; }
+        
+        header { padding: 25px; display: flex; justify-content: center; background: rgba(0,0,0,0.98); border-bottom: 2px solid var(--primary); position: sticky; top: 0; z-index: 100; }
+        .logo-img { height: 80px; }
+
+        /* BANNER ROTATIVO CORRIGIDO - 4 SEGUNDOS POR MSG */
+        .slider-container { 
+            width: 100%; 
+            background: #1a052e; 
+            overflow: hidden; /* Isso esconde as outras mensagens */
+            height: 60px; 
+            display: flex; 
+            align-items: center; 
+            border-bottom: 1px solid var(--primary); 
+        }
+        .slider { 
+            display: flex; 
+            width: 500%; /* 5 slides = 500% */
+            animation: slideText 20s infinite ease-in-out; /* 20s / 5 slides = 4s por slide */
+        }
+        .slide { 
+            width: 20%; /* Cada slide ocupa exatamente o espaço visível */
+            text-align: center; 
+            font-size: 16px; 
+            font-weight: 800; 
+            text-transform: uppercase; 
+            color: #fff; 
+            flex-shrink: 0; 
+            padding: 0 10px;
+        }
+        
+        @keyframes slideText { 
+            0%, 18% { transform: translateX(0); }
+            20%, 38% { transform: translateX(-20%); }
+            40%, 58% { transform: translateX(-40%); }
+            60%, 78% { transform: translateX(-60%); }
+            80%, 98% { transform: translateX(-80%); }
+            100% { transform: translateX(0); }
+        }
+
+        .section-title { text-align: center; padding: 50px 20px 20px; color: var(--primary); font-size: 28px; font-weight: 800; text-transform: uppercase; }
+        .price-table-section { padding: 20px; max-width: 1100px; margin: auto; }
+        .price-table { width: 100%; border-collapse: collapse; background: var(--card); border-radius: 20px; overflow: hidden; border: 1px solid var(--glass); }
+        .price-table th { background: var(--primary); padding: 20px; text-align: left; font-size: 14px; text-transform: uppercase; color: white; }
+        .price-table td { padding: 15px 20px; border-bottom: 1px solid var(--glass); font-size: 15px; }
+
+        .shipping-info { padding: 40px 20px; max-width: 1200px; margin: auto; }
+        .shipping-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+        .ship-card { background: linear-gradient(145deg, #150226, #000); border: 2px solid var(--primary); padding: 40px; border-radius: 25px; text-align: center; }
+        .ship-card img { height: 50px; margin-bottom: 20px; }
+        .ship-card h3 { color: var(--primary); margin-bottom: 15px; font-size: 22px; font-weight: 800; }
+        .ship-card p { font-size: 15px; line-height: 1.6; opacity: 0.9; }
+
+        .products { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; padding: 40px 20px; max-width: 1400px; margin: auto; }
+        .card { background: var(--card); border: 1px solid var(--glass); border-radius: 20px; padding: 30px; text-align: center; display: flex; flex-direction: column; transition: 0.3s; }
+        .card h3 { font-size: 18px; margin-bottom: 10px; font-weight: 700; color: #fff; }
+        .entrada { color: var(--primary); font-weight: 700; font-size: 14px; text-transform: uppercase; }
+        .parcela { font-size: 28px; font-weight: 800; color: #fff; margin: 10px 0; }
+        .btn-link { background: var(--green); color: white; text-decoration: none; padding: 15px; border-radius: 12px; font-weight: 800; margin-top: auto; display: block; }
+
+        .deposits { background: #080808; padding: 80px 20px; border-top: 1px solid var(--glass); }
+        .deposits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; max-width: 1300px; margin: auto; }
+        .dep-card { background: #121212; padding: 25px; border-radius: 15px; border-left: 6px solid var(--primary); }
+        .stars { color: #ffcc00; margin-bottom: 10px; font-size: 18px; }
+        .dep-name { display: block; font-weight: 800; color: var(--primary); font-size: 15px; margin-top: 10px;}
+
+        .wa-float { position: fixed; bottom: 35px; right: 35px; background: var(--green); width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 1000; box-shadow: 0 10px 25px rgba(0,0,0,0.4); }
+        footer { text-align: center; padding: 40px; opacity: 0.5; font-size: 12px; border-top: 1px solid var(--glass); }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="https://i.postimg.cc/65fDCpXM/Chat-GPT-Image-7-de-mai-de-2026-15-27-41.png" class="logo-img">
+    </header>
+
+    <div class="slider-container">
+        <div class="slider">
+            <div class="slide">🚀 ENVIAMOS PARA TODO O BRASIL VIA SEDEX</div>
+            <div class="slide">💎 IPHONES LACRADOS COM 1 ANO DE GARANTIA</div>
+            <div class="slide">💳 PARCELAMENTO NO BOLETO SEM BUROCRACIA</div>
+            <div class="slide">🛡️ PRODUTOS 100% ORIGINAIS E SEGURADOS</div>
+            <div class="slide">📱 SUPORTE ESPECIALIZADO VIA WHATSAPP</div>
+        </div>
+    </div>
+
+    <h2 class="section-title">Tabela de Preços Oficial</h2>
+    <section class="price-table-section">
+        <table class="price-table">
+            <thead><tr><th>Dispositivo</th><th>Entrada</th><th>Parcelas (16x)</th></tr></thead>
+            <tbody>
+                <tr><td>iPhone 14 256GB</td><td>R$ 250</td><td>R$ 210</td></tr>
+                <tr><td>iPhone 14 Pro 256GB</td><td>R$ 375</td><td>R$ 250</td></tr>
+                <tr><td>iPhone 14 Pro Max 256GB</td><td>R$ 400</td><td>R$ 280</td></tr>
+                <tr><td>iPhone 15 256GB</td><td>R$ 250</td><td>R$ 260</td></tr>
+                <tr><td>iPhone 15 Plus 256GB</td><td>R$ 300</td><td>R$ 290</td></tr>
+                <tr><td>iPhone 15 Pro 256GB</td><td>R$ 400</td><td>R$ 380</td></tr>
+                <tr><td>iPhone 15 Pro Max 256GB</td><td>R$ 500</td><td>R$ 420</td></tr>
+                <tr><td>iPhone 16 256GB</td><td>R$ 500</td><td>R$ 320</td></tr>
+                <tr><td>iPhone 16 Pro 256GB</td><td>R$ 800</td><td>R$ 470</td></tr>
+                <tr><td>iPhone 16 Pro Max 256GB</td><td>R$ 1000</td><td>R$ 550</td></tr>
+                <tr><td>iPhone 17 Normal 256GB</td><td>R$ 500</td><td>R$ 465</td></tr>
+                <tr><td>iPhone 17 Air 256GB</td><td>R$ 700</td><td>R$ 610</td></tr>
+                <tr><td>iPhone 17 Pro 256GB</td><td>R$ 1000</td><td>R$ 665</td></tr>
+                <tr><td>iPhone 17 Pro Max 256GB</td><td>R$ 1350</td><td>R$ 715</td></tr>
+                <tr><td>Xbox Series X 1TB</td><td>R$ 300</td><td>R$ 265</td></tr>
+                <tr><td>PS5 Slim 1TB</td><td>R$ 300</td><td>R$ 265</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section class="shipping-info">
+        <div class="shipping-grid">
+            <div class="ship-card">
+                <img src="https://logodownload.org/wp-content/uploads/2014/05/correios-logo-1-1.png" alt="Correios">
+                <h3>PRAZO DE ENTREGA</h3>
+                <p>Receba seu dispositivo em sua residência entre <b>3 a 4 dias úteis</b> após a postagem.</p>
+            </div>
+            <div class="ship-card">
+                <img src="https://logodownload.org/wp-content/uploads/2014/05/correios-logo-1-1.png" alt="Correios">
+                <h3>RASTREIO SEGURO</h3>
+                <p>O código é enviado para seu WhatsApp assim que o pedido for postado.</p>
+            </div>
+            <div class="ship-card">
+                <img src="https://logodownload.org/wp-content/uploads/2014/05/correios-logo-1-1.png" alt="Correios">
+                <h3>ENVIO COM SEGURO</h3>
+                <p>Todas as encomendas via SEDEX possuem seguro total contra extravios.</p>
+            </div>
+        </div>
+    </section>
+
+    <h2 class="section-title">Catálogo de Dispositivos</h2>
+    <div class="products">
+        <div class="card"><h3>iPhone 14 256GB</h3><p class="entrada">Entrada R$ 250</p><span class="parcela">16x R$ 210</span><a href="https://wa.me/5511944967694?text=Dispositivo%20selecionado:%20iPhone%2014%20-%20Capacidade:%20256GB%20-%20Entrada:%20R$250%20-%20Parcela:%2016x%20de%20R$210.%20Cor%20a%20consultar%20com%20o%20atendente." class="btn-link">RESERVAR</a></div>
+        <div class="card"><h3>iPhone 14 Pro 256GB</h3><p class="entrada">Entrada R$ 375</p><span class="parcela">16x R$ 250</span><a href="https://wa.me/5511944967694?text=Dispositivo%20selecionado:%20iPhone%2014%20Pro%20-%20Capacidade:%20256GB%20-%20Entrada:%20R$375%20-%20Parcela:%2016x%20de%20R$250.%20Cor%20a%20consultar%20com%20o%20atendente." class="btn-link">RESERVAR</a></div>
+        <div class="card"><h3>iPhone 14 Pro Max 256GB</h3><p class="entrada">Entrada R$ 400</p><span class="parcela">16x R$ 280</span><a href="https://wa.me/5511944967694?text=Dispositivo%20selecionado:%20iPhone%2014%20Pro%20Max%20-%20Capacidade:%20256GB%20-%20Entrada:%20R$400%20-%20Parcela:%2016x%20de%20R$280.%20Cor%20a%20consultar%20com%20o%20atendente." class="btn-link">RESERVAR</a></div>
+        
+        <div class="card"><h3>iPhone 15 256GB</h3><p class="entrada">Entrada R$ 250</p><span class="parcela">16x R$ 260</span><a href="https://wa.me/5511944967694?text=Dispositivo%20selecionado:%20iPhone%2015%20-%20Capacidade:%20256GB%20-%20Entrada:%20R$250%20-%20Parcela:%2016x%20de%20R$260.%20Cor%20a%20consultar%20com%20o%20atendente." class="btn-link">RESERVAR</a></div>
+        <div class="card"><h3>iPhone 15 Plus 256GB</h3><p class="entrada">Entrada R$ 300</p><span class="parcela">16x R$ 290</span><a href="https://wa.me/5511944967694?text=Dispositivo%20selecionado:%20iPhone%2015%20Plus%20-%20Capacidade:%20256GB%20-%20Entrada:%20R$300%20-%20Parcela:%2016x%20de%20R$290.%20Cor%20a%20consultar%20com%20o%20atendente." class="btn-link">RESERVAR</a></div>
+        <div class="card"><h3>iPhone 15 Pro 256GB</h3><p class="entrada">Entrada R$ 400</p><span class="parcela">16x R$ 380</span><a href="https://wa.me/5511944967694?text=Dispositivo%20selecionado:%20iPhone%2015%20Pro%20-%20Capacidade:%20256GB%20-%20Entrada:%20R$400%20-%20Parcela:%2016x%20de%20R$380.%20Cor%20a%20consultar%20com%20o%20atendente." class="btn-link">RESERVAR</a></div>
+        <div class="card"><h3>iPhone 15 Pro Max 256GB</h3><p class="entrada">Entrada R$ 500</p><span class="parcela">16x R$ 420</span><a href="https://wa.me/5511944967694?text=Dispositivo%20selecionado:%20iPhone%2015%20Pro%20Max%20-%20Capacidade:%20256GB%20-%20Entrada:%20R$500%20-%20Parcela:%2016x%20de%20R$420.%20Cor%20a%20consultar%20com%20o%20atendente." class="btn-link">RESERVAR</a></div>
+
+        <div class="card"><h3>iPhone 16 256GB</h3><p class="entrada">Entrada R$ 500</p><span class="parcela">16x R$ 320</span><a href="https://wa.me/5511944967694?text=Dispositivo%20selecionado:%20iPhone%2016%20-%20Capacidade:%20256GB%20-%20Entrada:%20R$500%20-%20Parcela:%2016x%20de%20R$320.%20Cor%20a%20consultar%20com%20o%20atendente." class="btn-link">RESERVAR</a></div>
+        <div class="card"><h3>iPhone 16 Pro 256GB</h3><p class="entrada">Entrada R$ 800</p><span class="parcela">16x R$ 470</span><a href="https://wa.me/5511944967694?text=Dispositivo%20selecionado:%20iPhone%2016%20Pro%20-%20Capacidade:%20256GB%20-%20Entrada:%20R$800%20-%20Parcela:%2016x%20de%20R$470.%20Cor%20a%20consultar%20com%20o%20atendente." class="btn-link">RESERVAR</a></div>
+        <div class="card"><h3>iPhone 16 Pro Max 256GB</h3><p class="entrada">Entrada R$ 1000</p><span class="parcela">16x R$ 550</span><a href="https://wa.me/5511944967694?text=Dispositivo%20selecionado:%20iPhone%2016%20Pro%20Max%20-%20Capacidade:%20256GB%20-%20Entrada:%20R$1000%20-%20Parcela:%2016x%20de%20R$550.%20Cor%20a%20consultar%20com%20o%20atendente." class="btn-link">RESERVAR</a></div>
+
+        <div class="card"><h3>iPhone 17 Normal 256GB</h3><p class="entrada">Entrada R$ 500</p><span class="parcela">16x R$ 465</span><a href="https://wa.me/5511944967694?text=Dispositivo%20selecionado:%20iPhone%2017%20Normal%20-%20Capacidade:%20256GB%20-%20Entrada:%20R$500%20-%20Parcela:%2016x%20de%20R$465.%20Cor%20a%20consultar%20com%20o%20atendente." class="btn-link">RESERVAR</a></div>
+        <div class="card"><h3>iPhone 17 Air 256GB</h3><p class="entrada">Entrada R$ 700</p><span class="parcela">16x R$ 610</span><a href="https://wa.me/5511944967694?text=Dispositivo%20selecionado:%20iPhone%2017%20Air%20-%20Capacidade:%20256GB%20-%20Entrada:%20R$700%20-%20Parcela:%2016x%20de%20R$610.%20Cor%20a%20consultar%20com%20o%20atendente." class="btn-link">RESERVAR</a></div>
+        <div class="card"><h3>iPhone 17 Pro 256GB</h3><p class="entrada">Entrada R$ 1000</p><span class="parcela">16x R$ 665</span><a href="https://wa.me/5511944967694?text=Dispositivo%20selecionado:%20iPhone%2017%20Pro%20-%20Capacidade:%20256GB%20-%20Entrada:%20R$1000%20-%20Parcela:%2016x%20de%20R$665.%20Cor%20a%20consultar%20com%20o%20atendente." class="btn-link">RESERVAR</a></div>
+        <div class="card"><h3>iPhone 17 Pro Max 256GB</h3><p class="entrada">Entrada R$ 1350</p><span class="parcela">16x R$ 715</span><a href="https://wa.me/5511944967694?text=Dispositivo%20selecionado:%20iPhone%2017%20Pro%20Max%20-%20Capacidade:%20256GB%20-%20Entrada:%20R$1350%20-%20Parcela:%2016x%20de%20R$715.%20Cor%20a%20consultar%20com%20o%20atendente." class="btn-link">RESERVAR</a></div>
+
+        <div class="card"><h3>Xbox Series X 1TB</h3><p class="entrada">Entrada R$ 300</p><span class="parcela">16x R$ 265</span><a href="https://wa.me/5511944967694?text=Dispositivo%20selecionado:%20Xbox%20Series%20X%20-%20Capacidade:%201TB%20-%20Entrada:%20R$300%20-%20Parcela:%2016x%20de%20R$265." class="btn-link">COMPRAR</a></div>
+        <div class="card"><h3>PS5 Slim 1TB</h3><p class="entrada">Entrada R$ 300</p><span class="parcela">16x R$ 265</span><a href="https://wa.me/5511944967694?text=Dispositivo%20selecionado:%20PS5%20Slim%20-%20Capacidade:%201TB%20-%20Entrada:%20R$300%20-%20Parcela:%2016x%20de%20R$265." class="btn-link">COMPRAR</a></div>
+    </div>
+
+    <section class="deposits">
+        <h2 class="section-title">Feedback dos Nossos Clientes</h2>
+        <div class="deposits-grid">
+            <div class="dep-card"><div class="stars">★★★★★</div><p>"Meu iPhone chegou em 3 dias certinho em casa. Top demais!"</p><span class="dep-name">Felipe Albuquerque</span></div>
+            <div class="dep-card"><div class="stars">★★★★★</div><p>"A Versus Tech é muito confiável, o suporte é excelente."</p><span class="dep-name">Juliana Costa</span></div>
+            <div class="dep-card"><div class="stars">★★★★★</div><p>"Chegou lacrado e com garantia. Recomendo a todos."</p><span class="dep-name">Bruno Mendes</span></div>
+            <div class="dep-card"><div class="stars">★★★★★</div><p>"Melhor preço do mercado gamer."</p><span class="dep-name">Ricardo G.</span></div>
+            <div class="dep-card"><div class="stars">★★★★★</div><p>"Tirei todas as dúvidas no WhatsApp."</p><span class="dep-name">Mariana S.</span></div>
+            <div class="dep-card"><div class="stars">★★★★★</div><p>"Aparelho lacrado e original."</p><span class="dep-name">Leonardo F.</span></div>
+            <div class="dep-card"><div class="stars">★★★★★</div><p>"Comprei o PS5 e chegou perfeito."</p><span class="dep-name">Beatriz L.</span></div>
+            <div class="dep-card"><div class="stars">★★★★★</div><p>"Loja de confiança mesmo."</p><span class="dep-name">Tiago M.</span></div>
+            <div class="dep-card"><div class="stars">★★★★★</div><p>"Envio segurado me deu tranquilidade."</p><span class="dep-name">Fernanda O.</span></div>
+            <div class="dep-card"><div class="stars">★★★★★</div><p>"iPhone 16 Pro Max é sensacional."</p><span class="dep-name">Gustavo P.</span></div>
+            <div class="dep-card"><div class="stars">★★★★★</div><p>"Transparência total em tudo."</p><span class="dep-name">Aline R.</span></div>
+            <div class="dep-card"><div class="stars">★★★★★</div><p>"O rastreio é atualizado rápido."</p><span class="dep-name">Rodrigo V.</span></div>
+            <div class="dep-card"><div class="stars">★★★★★</div><p>"Melhor experiência de compra."</p><span class="dep-name">Camila X.</span></div>
+        </div>
+    </section>
+
+    <a href="https://wa.me/5511944967694" class="wa-float" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="40">
+    </a>
+
+    <footer>
+        Versus Tech Gamer © 2026 | CNPJ: 45.234.890/0001-12 | São Paulo - BR
+    </footer>
+
+</body>
+</html>
