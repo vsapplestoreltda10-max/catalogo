@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Versus Tech Gamer | Oficial</title>
+    <title>Versus Tecnologia | Oficial</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;800&display=swap" rel="stylesheet">
     <style>
         :root { --primary: #ae52ff; --dark: #050505; --card: #111; --green: #25D366; --glass: rgba(174, 82, 255, 0.2); }
@@ -13,23 +13,30 @@
         header { padding: 25px; display: flex; justify-content: center; background: rgba(0,0,0,0.98); border-bottom: 2px solid var(--primary); position: sticky; top: 0; z-index: 100; }
         .logo-img { height: 80px; }
 
-        /* CARD ROTATIVO DE DESTAQUE NO TOPO */
-        .top-highlight-section { padding: 30px 20px 20px 20px; max-width: 600px; margin: 0 auto; }
+        /* HEADER INTERNO COM TÍTULO E SUBTÍTULO */
+        .header-content { text-align: center; padding: 40px 20px 0px; max-width: 800px; margin: 0 auto; }
+        .main-title { color: var(--primary); font-size: 36px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; }
+        .main-subtitle { font-size: 15px; color: #aaa; margin-top: 10px; line-height: 1.6; font-weight: 400; }
+        .main-subtitle b { color: var(--primary); }
+
+        /* BANNER ROTATIVO DE DESTAQUE (ESTICADO DE PONTA A PONTA) */
+        .top-highlight-section { padding: 25px 0 20px 0; width: 100%; }
         .dynamic-card-container {
             position: relative;
             background: linear-gradient(145deg, #150226, #000); 
-            border: 2px solid var(--primary); 
-            border-radius: 25px; 
-            min-height: 240px; 
+            border-top: 2px solid var(--primary);
+            border-bottom: 2px solid var(--primary); 
+            min-height: 220px; 
             display: flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
+            width: 100%;
         }
         .top-card { 
             position: absolute;
             width: 100%;
-            padding: 30px; 
+            padding: 30px 20px; 
             text-align: center; 
             opacity: 0;
             transition: opacity 0.8s ease-in-out;
@@ -37,6 +44,8 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            max-width: 800px; /* Mantém o texto centralizado e confortável para leitura */
+            margin: 0 auto;
         }
         .top-card.active {
             opacity: 1;
@@ -44,7 +53,7 @@
         }
         .top-card .icon { font-size: 45px; margin-bottom: 15px; display: block; }
         .top-card img { height: 45px; margin-bottom: 15px; }
-        .top-card h3 { color: var(--primary); margin-bottom: 10px; font-size: 20px; font-weight: 800; text-transform: uppercase; }
+        .top-card h3 { color: var(--primary); margin-bottom: 10px; font-size: 20px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; }
         .top-card p { font-size: 15px; line-height: 1.5; opacity: 0.9; }
 
         .section-title { text-align: center; padding: 50px 20px 20px; color: var(--primary); font-size: 28px; font-weight: 800; text-transform: uppercase; }
@@ -95,7 +104,15 @@
         <img src="https://i.postimg.cc/65fDCpXM/Chat-GPT-Image-7-de-mai-de-2026-15-27-41.png" class="logo-img">
     </header>
 
-    <!-- CARD ROTATIVO NO TOPO -->
+    <!-- TÍTULO PRINCIPAL E SUBTÍTULO DE VANTAGENS/ESPECIFICAÇÕES -->
+    <div class="header-content">
+        <h1 class="main-title">Versus Tecnologia</h1>
+        <p class="main-subtitle">
+            Sua <b>compra facilitada</b> com parcelamento direto no boleto bancário, sem burocracia. Todos os nossos dispositivos são <b>100% originais, homologados, lacrados de fábrica e com garantia oficial</b> de fábrica para que você tenha total tranquilidade na sua escolha.
+        </p>
+    </div>
+
+    <!-- BANNER ROTATIVO (ESTICADO LADO A LADO) -->
     <section class="top-highlight-section">
         <div class="dynamic-card-container">
             <!-- Mensagem 1: Parcelamento -->
@@ -241,7 +258,7 @@
     </a>
 
     <footer>
-        Versus Tech Gamer © 2026 | CNPJ: 45.234.890/0001-12 | São Paulo - BR
+        Versus Tecnologia © 2026 | CNPJ: 45.234.890/0001-12 | São Paulo - BR
     </footer>
 
     <!-- SCRIPT DE TRANSIÇÃO DO CARD DO TOPO -->
