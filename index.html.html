@@ -13,8 +13,8 @@
         header { padding: 25px; display: flex; justify-content: center; background: rgba(0,0,0,0.98); border-bottom: 2px solid var(--primary); position: sticky; top: 0; z-index: 100; }
         .logo-img { height: 80px; }
 
-        /* NOVO CARD ROTATIVO DE DESTAQUE NO TOPO */
-        .top-highlight-section { padding: 20px; max-width: 600px; margin: 20px auto 0 auto; }
+        /* CARD ROTATIVO DE DESTAQUE NO TOPO */
+        .top-highlight-section { padding: 30px 20px 20px 20px; max-width: 600px; margin: 0 auto; }
         .dynamic-card-container {
             position: relative;
             background: linear-gradient(145deg, #150226, #000); 
@@ -55,7 +55,7 @@
         .price-table th { background: var(--primary); padding: 20px; text-align: left; font-size: 14px; text-transform: uppercase; color: white; }
         .price-table td { padding: 15px 20px; border-bottom: 1px solid var(--glass); font-size: 15px; }
 
-        /* SEÇÃO DOS CORREIOS ORIGINAL (FIXA LÁ EMBAIXO) */
+        /* SEÇÃO DOS CORREIOS ORIGINAL */
         .shipping-info { padding: 40px 20px; max-width: 1200px; margin: auto; }
         .shipping-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
         .ship-card { background: linear-gradient(145deg, #150226, #000); border: 2px solid var(--primary); padding: 40px; border-radius: 25px; text-align: center; }
@@ -71,14 +71,22 @@
         .parcela { font-size: 28px; font-weight: 800; color: #fff; margin: 10px 0; }
         .btn-link { background: var(--green); color: white; text-decoration: none; padding: 15px; border-radius: 12px; font-weight: 800; margin-top: auto; display: block; }
 
+        /* DEPOIMENTOS */
         .deposits { background: #080808; padding: 80px 20px; border-top: 1px solid var(--glass); }
         .deposits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; max-width: 1300px; margin: auto; }
         .dep-card { background: #121212; padding: 25px; border-radius: 15px; border-left: 6px solid var(--primary); }
         .stars { color: #ffcc00; margin-bottom: 10px; font-size: 18px; }
         .dep-name { display: block; font-weight: 800; color: var(--primary); font-size: 15px; margin-top: 10px;}
 
+        /* SEÇÃO DE SEGURANÇA ADICIONADA */
+        .security-badges { background: #0c0c0c; padding: 30px 20px; text-align: center; border-top: 1px solid var(--glass); }
+        .badges-container { display: flex; justify-content: center; align-items: center; gap: 40px; flex-wrap: wrap; max-width: 1000px; margin: 0 auto; }
+        .badge-item { display: flex; align-items: center; gap: 12px; color: #aaa; font-size: 13px; text-align: left; }
+        .badge-item .badge-icon { font-size: 28px; color: var(--primary); }
+        .badge-item b { color: #fff; display: block; font-size: 14px; }
+
         .wa-float { position: fixed; bottom: 35px; right: 35px; background: var(--green); width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 1000; box-shadow: 0 10px 25px rgba(0,0,0,0.4); }
-        footer { text-align: center; padding: 40px; opacity: 0.5; font-size: 12px; border-top: 1px solid var(--glass); }
+        footer { text-align: center; padding: 40px; opacity: 0.5; font-size: 12px; background: #0c0c0c; }
     </style>
 </head>
 <body>
@@ -87,7 +95,7 @@
         <img src="https://i.postimg.cc/65fDCpXM/Chat-GPT-Image-7-de-mai-de-2026-15-27-41.png" class="logo-img">
     </header>
 
-    <!-- NOVO CARD ROTATIVO NO TOPO DO SITE (SUBSTITUINDO A BARRA ROXA) -->
+    <!-- CARD ROTATIVO NO TOPO -->
     <section class="top-highlight-section">
         <div class="dynamic-card-container">
             <!-- Mensagem 1: Parcelamento -->
@@ -136,7 +144,7 @@
         </table>
     </section>
 
-    <!-- SEÇÃO DOS CORREIOS ORIGINAL (MANTIDA FIXA EXATAMENTE COMO ESTAVA) -->
+    <!-- SEÇÃO DOS CORREIOS ORIGINAL INTEGRA -->
     <section class="shipping-info">
         <div class="shipping-grid">
             <div class="ship-card">
@@ -181,6 +189,7 @@
         <div class="card"><h3>PS5 Slim 1TB</h3><p class="entrada">Entrada R$ 300</p><span class="parcela">16x R$ 265</span><a href="https://wa.me/5511944967694?text=Dispositivo%20selecionado:%20PS5%20Slim%20-%20Capacidade:%201TB%20-%20Entrada:%20R$300%20-%20Parcela:%2016x%20de%20R$265." class="btn-link">COMPRAR</a></div>
     </div>
 
+    <!-- SEÇÃO DE FEEDBACK DOS CLIENTES -->
     <section class="deposits">
         <h2 class="section-title">Feedback dos Nossos Clientes</h2>
         <div class="deposits-grid">
@@ -197,6 +206,33 @@
             <div class="dep-card"><div class="stars">★★★★★</div><p>"Transparência total em tudo."</p><span class="dep-name">Aline R.</span></div>
             <div class="dep-card"><div class="stars">★★★★★</div><p>"O rastreio é atualizado rápido."</p><span class="dep-name">Rodrigo V.</span></div>
             <div class="dep-card"><div class="stars">★★★★★</div><p>"Melhor experiência de compra."</p><span class="dep-name">Camila X.</span></div>
+        </div>
+    </section>
+
+    <!-- NOVA SEÇÃO DE SELOS DE SEGURANÇA ADICIONADA -->
+    <section class="security-badges">
+        <div class="badges-container">
+            <div class="badge-item">
+                <span class="badge-icon">🔒</span>
+                <div>
+                    <b>SITE SEGURO</b>
+                    Criptografia SSL de 256 bits
+                </div>
+            </div>
+            <div class="badge-item">
+                <span class="badge-icon">🛡️</span>
+                <div>
+                    <b>COMPRA PROTEGIDA</b>
+                    Garantia total contra extravios
+                </div>
+            </div>
+            <div class="badge-item">
+                <span class="badge-icon">✓</span>
+                <div>
+                    <b>DISPOSITIVOS HOMOLOGADOS</b>
+                    Aparelhos 100% originais e lacrados
+                </div>
+            </div>
         </div>
     </section>
 
@@ -219,7 +255,6 @@
             topCards[currentTopCard].classList.add('active');
         }
 
-        // Altera a mensagem a cada 4 segundos
         setInterval(changeTopCard, 4000);
     </script>
 
