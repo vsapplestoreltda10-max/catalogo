@@ -6,7 +6,7 @@
     <title>Versus Tecnologia | Oficial</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;800&display=swap" rel="stylesheet">
     <style>
-        :root { --primary: #ae52ff; --dark: #050505; --card: #111; --green: #25D366; --glass: rgba(174, 82, 255, 0.2); }
+        :root { --primary: #ae52ff; --dark: #050505; --card: #111; --glass: rgba(174, 82, 255, 0.2); }
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
         body { background: var(--dark); color: white; overflow-x: hidden; scroll-behavior: smooth; }
         
@@ -19,7 +19,7 @@
         .main-subtitle { font-size: 11px; color: #666; margin-top: 5px; letter-spacing: 0.5px; text-transform: uppercase; font-weight: 500; }
         .main-subtitle b { color: var(--primary); }
 
-        /* BANNER ROTATIVO DE DESTAQUE (ESTICADO DE PONTA A PONTA) */
+        /* BANNER ROTATIVO DE DESTAQUE (ESTICADO DE PONTA A PONTA NA BORDA) */
         .top-highlight-section { padding: 25px 0 20px 0; width: 100%; }
         .dynamic-card-container {
             position: relative;
@@ -57,6 +57,7 @@
         .top-card p { font-size: 15px; line-height: 1.5; opacity: 0.9; }
 
         .section-title { text-align: center; padding: 50px 20px 20px; color: var(--primary); font-size: 28px; font-weight: 800; text-transform: uppercase; }
+        .section-subtitle { text-align: center; font-size: 14px; color: #888; margin-top: -10px; margin-bottom: 30px; }
         
         /* TABELA DE PREÇOS */
         .price-table-section { padding: 20px; max-width: 1100px; margin: auto; }
@@ -78,7 +79,58 @@
         .card h3 { font-size: 18px; margin-bottom: 10px; font-weight: 700; color: #fff; }
         .entrada { color: var(--primary); font-weight: 700; font-size: 14px; text-transform: uppercase; }
         .parcela { font-size: 28px; font-weight: 800; color: #fff; margin: 10px 0; }
-        .btn-link { background: var(--green); color: white; text-decoration: none; padding: 15px; border-radius: 12px; font-weight: 800; margin-top: auto; display: block; }
+        
+        .btn-link { background: var(--primary); color: white; text-decoration: none; padding: 15px; border-radius: 12px; font-weight: 800; margin-top: auto; display: block; transition: 0.3s; }
+        .btn-link:hover { background: #943be3; box-shadow: 0 0 15px rgba(174, 82, 255, 0.4); }
+
+        /* SEÇÃO: DIFERENCIAIS */
+        .features-section { padding: 60px 20px; max-width: 1200px; margin: auto; }
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; }
+        .feature-card { background: #0c0c0c; border: 1px solid rgba(255, 255, 255, 0.05); padding: 35px 30px; border-radius: 16px; text-align: left; transition: all 0.3s ease; position: relative; }
+        .feature-card:hover { border-color: var(--primary); box-shadow: 0 0 15px rgba(174, 82, 255, 0.15); }
+        .feature-card .f-icon { font-size: 28px; color: var(--primary); margin-bottom: 15px; display: block; }
+        .feature-card h3 { font-size: 18px; font-weight: 700; color: #fff; margin-bottom: 10px; letter-spacing: 0.5px; }
+        .feature-card p { font-size: 14px; color: #aaa; line-height: 1.6; }
+        .feature-card .badge-destaque { position: absolute; top: 15px; right: 20px; font-size: 10px; color: var(--primary); font-weight: 800; text-transform: uppercase; letter-spacing: 1px; }
+
+        /* SEÇÃO: QUEM SOMOS + MÉTRICAS */
+        .about-metrics-section { padding: 60px 20px; max-width: 1200px; margin: auto; display: grid; grid-template-columns: 1.2fr 1fr; gap: 50px; align-items: center; }
+        .about-text-side { border-left: 3px solid var(--primary); padding-left: 25px; text-align: left; }
+        .about-text-side h2 { font-size: 28px; font-weight: 800; text-transform: uppercase; color: #fff; margin-bottom: 20px; }
+        .about-text-side h2 span { color: var(--primary); }
+        .about-text-side p { font-size: 14px; color: #aaa; line-height: 1.8; margin-bottom: 15px; }
+        .metrics-grid-side { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .metric-box { background: #0c0c0c; border: 1px solid rgba(255, 255, 255, 0.03); padding: 30px 20px; border-radius: 12px; text-align: center; }
+        .metric-number { font-size: 32px; font-weight: 800; color: var(--primary); margin-bottom: 5px; letter-spacing: -0.5px; }
+        .metric-label { font-size: 11px; color: #888; text-transform: uppercase; font-weight: 700; letter-spacing: 1px; }
+
+        /* SEÇÃO NOVA INSPIRADA NO PRINT (Captura de tela 2026-06-28 211001.png) - ROXO PREMIUM */
+        .cta-banner-section { 
+            background: linear-gradient(180deg, #050505 0%, #150226 50%, #050505 100%); 
+            padding: 80px 20px; 
+            text-align: center;
+            border-top: 1px solid rgba(174, 82, 255, 0.1);
+            border-bottom: 1px solid rgba(174, 82, 255, 0.1);
+        }
+        .cta-banner-content { max-width: 800px; margin: 0 auto; }
+        .cta-banner-content h2 { font-size: 36px; font-weight: 800; color: #fff; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .cta-banner-content h2 span { color: var(--primary); display: block; margin-top: 5px; }
+        .cta-banner-content p { font-size: 15px; color: #aaa; line-height: 1.6; margin-bottom: 35px; max-width: 600px; margin-left: auto; margin-right: auto; }
+        .cta-banner-btn { 
+            background: var(--primary); 
+            color: #fff; 
+            text-decoration: none; 
+            padding: 16px 40px; 
+            border-radius: 12px; 
+            font-size: 15px; 
+            font-weight: 800; 
+            display: inline-flex; 
+            align-items: center; 
+            gap: 10px; 
+            box-shadow: 0 4px 20px rgba(174, 82, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+        .cta-banner-btn:hover { background: #943be3; transform: translateY(-2px); box-shadow: 0 6px 25px rgba(174, 82, 255, 0.5); }
 
         /* DEPOIMENTOS */
         .deposits { background: #080808; padding: 80px 20px; border-top: 1px solid var(--glass); }
@@ -87,15 +139,23 @@
         .stars { color: #ffcc00; margin-bottom: 10px; font-size: 18px; }
         .dep-name { display: block; font-weight: 800; color: var(--primary); font-size: 15px; margin-top: 10px;}
 
-        /* SEÇÃO DE SEGURANÇA ADICIONADA */
+        /* SEÇÃO DE SEGURANÇA */
         .security-badges { background: #0c0c0c; padding: 30px 20px; text-align: center; border-top: 1px solid var(--glass); }
         .badges-container { display: flex; justify-content: center; align-items: center; gap: 40px; flex-wrap: wrap; max-width: 1000px; margin: 0 auto; }
         .badge-item { display: flex; align-items: center; gap: 12px; color: #aaa; font-size: 13px; text-align: left; }
         .badge-item .badge-icon { font-size: 28px; color: var(--primary); }
         .badge-item b { color: #fff; display: block; font-size: 14px; }
 
-        .wa-float { position: fixed; bottom: 35px; right: 35px; background: var(--green); width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 1000; box-shadow: 0 10px 25px rgba(0,0,0,0.4); }
+        /* BOTAO FLUTUANTE DO WHATSAPP */
+        .wa-float { position: fixed; bottom: 35px; right: 35px; background: var(--primary); width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 1000; box-shadow: 0 10px 25px rgba(174, 82, 255, 0.4); transition: 0.3s; }
+        .wa-float:hover { transform: scale(1.05); background: #943be3; }
+        
         footer { text-align: center; padding: 40px; opacity: 0.5; font-size: 12px; background: #0c0c0c; }
+
+        @media (max-width: 768px) {
+            .about-metrics-section { grid-template-columns: 1fr; gap: 30px; }
+            .cta-banner-content h2 { font-size: 28px; }
+        }
     </style>
 </head>
 <body>
@@ -104,28 +164,23 @@
         <img src="https://i.postimg.cc/65fDCpXM/Chat-GPT-Image-7-de-mai-de-2026-15-27-41.png" class="logo-img">
     </header>
 
-    <!-- TÍTULO PRINCIPAL E SUBTÍTULO SUPER CURTO E DISCRETO -->
     <div class="header-content">
         <h1 class="main-title">Versus Tecnologia</h1>
         <p class="main-subtitle">Dispositivos 100% Originais e Homologados com Parcelamento Facilitado</p>
     </div>
 
-    <!-- BANNER ROTATIVO (ESTICADO LADO A LADO) -->
     <section class="top-highlight-section">
         <div class="dynamic-card-container">
-            <!-- Mensagem 1: Parcelamento -->
             <div class="top-card active">
                 <span class="icon">💳</span>
                 <h3>PARCELAMENTO FACILITADO</h3>
                 <p>Adquira o seu dispositivo com parcelamento direto no <b>boleto bancário</b> sem complicação.</p>
             </div>
-            <!-- Mensagem 2: Garantia -->
             <div class="top-card">
                 <span class="icon">🛡️</span>
                 <h3>GARANTIA DO DISPOSITIVO</h3>
                 <p>Todos os aparelhos contam com <b>garantia completa e oficial</b> para total segurança da sua compra.</p>
             </div>
-            <!-- Mensagem 3: Correios -->
             <div class="top-card">
                 <img src="https://logodownload.org/wp-content/uploads/2014/05/correios-logo-1-1.png" alt="Correios">
                 <h3>ENVIO SEGURO</h3>
@@ -159,7 +214,6 @@
         </table>
     </section>
 
-    <!-- SEÇÃO DOS CORREIOS ORIGINAL INTEGRA -->
     <section class="shipping-info">
         <div class="shipping-grid">
             <div class="ship-card">
@@ -204,7 +258,83 @@
         <div class="card"><h3>PS5 Slim 1TB</h3><p class="entrada">Entrada R$ 300</p><span class="parcela">16x R$ 265</span><a href="https://wa.me/5511944967694?text=Dispositivo%20selecionado:%20PS5%20Slim%20-%20Capacidade:%201TB%20-%20Entrada:%20R$300%20-%20Parcela:%2016x%20de%20R$265." class="btn-link">COMPRAR</a></div>
     </div>
 
-    <!-- SEÇÃO DE FEEDBACK DOS CLIENTES -->
+    <h2 class="section-title">Por que escolher a Versus Tecnologia?</h2>
+    <p class="section-subtitle">Diferenciais que fazem da nossa loja a escolha certa para o seu próximo dispositivo.</p>
+    <section class="features-section">
+        <div class="features-grid">
+            <div class="feature-card">
+                <span class="badge-destaque">Destaque</span>
+                <span class="f-icon">🛡️</span>
+                <h3>Garantia Real</h3>
+                <p>Todos os aparelhos contam com suporte completo. Compre com total segurança e tranquilidade.</p>
+            </div>
+            <div class="feature-card">
+                <span class="f-icon">🔧</span>
+                <h3>Suporte Especializado</h3>
+                <p>Equipe dedicada para fornecer o melhor atendimento pós-venda para o seu hardware e smartphone.</p>
+            </div>
+            <div class="feature-card">
+                <span class="f-icon">💳</span>
+                <h3>Facilidade de Pagamento</h3>
+                <p>A única que oferece parcelamento direto de verdade para facilitar a renovação do seu setup gamer.</p>
+            </div>
+            <div class="feature-card">
+                <span class="f-icon">🎧</span>
+                <h3>Dispositivos Premium</h3>
+                <p>Trabalhamos apenas com o topo de linha do mercado de tecnologia, consoles potentes e celulares modernos.</p>
+            </div>
+            <div class="feature-card">
+                <span class="f-icon">⚡</span>
+                <h3>Atendimento Rápido</h3>
+                <p>Fale direto com nossos atendentes especialistas pelo WhatsApp e tenha respostas de prontidão.</p>
+            </div>
+            <div class="feature-card">
+                <span class="f-icon">📦</span>
+                <h3>Aparelhos Originais</h3>
+                <p>Produtos 100% autênticos, lacrados de fábrica e com procedência rigidamente garantida.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-metrics-section">
+        <div class="about-text-side">
+            <h2>Quem é a <span>Versus Tecnologia</span>?</h2>
+            <p>A Versus Tecnologia nasceu com um propósito bem claro no mercado de tecnologia: levar aos clientes os melhores dispositivos e consoles do mundo com preço justo, facilidade de acesso e um atendimento memorável.</p>
+            <p>Somos especialistas em smartphones modernos e equipamentos de alta performance. Acreditamos fortemente que a venda é apenas o primeiro degrau para o início de um sólido relacionamento de transparência e confiança mútua.</p>
+            <p>Cada detalhe em nossa página e em nosso atendimento direto via WhatsApp foi projetado para assegurar que você tenha a experiência de compra online mais segura, clara e eficiente possível.</p>
+        </div>
+        <div class="metrics-grid-side">
+            <div class="metric-box">
+                <div class="metric-number">100%</div>
+                <div class="metric-label">Originais</div>
+            </div>
+            <div class="metric-box">
+                <div class="metric-number">+5.000</div>
+                <div class="metric-label">Clientes</div>
+            </div>
+            <div class="metric-box">
+                <div class="metric-number">16x</div>
+                <div class="metric-label">No Boleto</div>
+            </div>
+            <div class="metric-box">
+                <div class="metric-number">5 ★</div>
+                <div class="metric-label">Avaliação</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO NOVA ADICIONADA EM CIMA DO FEEDBACK (CONFORME SOLICITADO NO PRINT) -->
+    <section class="cta-banner-section">
+        <div class="cta-banner-content">
+            <h2>Pronto para seu novo <span>smartphone?</span></h2>
+            <p>Fale com a Versus Tecnologia pelo WhatsApp e garanta o melhor celular com as melhores condições.</p>
+            <a href="https://wa.me/5511944967694?text=Ol%C3%A1,%20gostaria%20de%20saber%20mais%20sobre%20as%20condi%C3%A7%C3%B5es%20dos%20smartphones." class="cta-banner-btn" target="_blank">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                Falar pelo WhatsApp
+            </a>
+        </div>
+    </section>
+
     <section class="deposits">
         <h2 class="section-title">Feedback dos Nossos Clientes</h2>
         <div class="deposits-grid">
@@ -218,13 +348,12 @@
             <div class="dep-card"><div class="stars">★★★★★</div><p>"Loja de confiança mesmo."</p><span class="dep-name">Tiago M.</span></div>
             <div class="dep-card"><div class="stars">★★★★★</div><p>"Envio segurado me deu tranquilidade."</p><span class="dep-name">Fernanda O.</span></div>
             <div class="dep-card"><div class="stars">★★★★★</div><p>"iPhone 16 Pro Max é sensacional."</p><span class="dep-name">Gustavo P.</span></div>
-            <div class="dep-card"><div class="stars">★★★★★</div><p>"Transparência total em tudo."</p><span class="dep-name">Aline R.</span></div>
+            <div class="dep-card"><div class="stars">★★★★★</div><p>"Transparência total in tudo."</p><span class="dep-name">Aline R.</span></div>
             <div class="dep-card"><div class="stars">★★★★★</div><p>"O rastreio é atualizado rápido."</p><span class="dep-name">Rodrigo V.</span></div>
             <div class="dep-card"><div class="stars">★★★★★</div><p>"Melhor experiência de compra."</p><span class="dep-name">Camila X.</span></div>
         </div>
     </section>
 
-    <!-- NOVA SEÇÃO DE SELOS DE SEGURANÇA ADICIONADA -->
     <section class="security-badges">
         <div class="badges-container">
             <div class="badge-item">
@@ -252,14 +381,13 @@
     </section>
 
     <a href="https://wa.me/5511944967694" class="wa-float" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="40">
+        <svg width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-message-square"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
     </a>
 
     <footer>
         Versus Tecnologia © 2026 | CNPJ: 45.234.890/0001-12 | São Paulo - BR
     </footer>
 
-    <!-- SCRIPT DE TRANSIÇÃO DO CARD DO TOPO -->
     <script>
         const topCards = document.querySelectorAll('.top-card');
         let currentTopCard = 0;
