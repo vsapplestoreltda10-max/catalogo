@@ -259,11 +259,22 @@
         
         footer { text-align: center; padding: 40px; opacity: 0.5; font-size: 12px; background: #0c0c0c; }
 
+        /* RESPONSIVIDADE ATUALIZADA (CORREÇÃO PARA CELULARES) */
         @media (max-width: 992px) {
-            .hero-section { flex-direction: column; text-align: center; padding: 40px 20px; min-height: auto; }
+            .hero-section { flex-direction: column; text-align: center; padding: 40px 15px; min-height: auto; gap: 20px; }
             .hero-content { text-align: center; }
-            .hero-images-container { width: 100%; max-width: 400px; height: 350px; margin-top: 30px; }
-            .floating-iphone { width: 100%; max-height: 330px; }
+            
+            /* Correção do Título Gigante no Mobile */
+            .hero-content h1 { font-size: 32px; margin-bottom: 15px; }
+            .hero-content p { font-size: 14px; margin-bottom: 25px; }
+            
+            /* Ajuste de Alinhamento das Tags */
+            .hero-badges { justify-content: center; margin-top: 25px; flex-wrap: wrap; }
+            
+            /* Correção da Imagem Gigante no Mobile */
+            .hero-images-container { width: 100%; max-width: 320px; height: 300px; margin-top: 15px; }
+            .floating-iphone { width: 100%; max-height: 280px; }
+            
             .about-metrics-section { grid-template-columns: 1fr; gap: 30px; }
             header { padding: 20px; }
             nav { display: none; }
@@ -297,7 +308,6 @@
             </div>
         </div>
 
-        <!-- O LINK DA IMAGEM ATUALIZADO AQUI -->
         <div class="hero-images-container">
             <img src="https://i.ibb.co/PZws8y87/ESSSAAAAAAAAAAAA.png" class="floating-iphone" alt="iPhones Versus Tecnologia">
         </div>
@@ -414,7 +424,7 @@
             <div class="feature-card">
                 <span class="f-icon">💳</span>
                 <h3>Facilidade de Pagamento</h3>
-                <p>A única que oferece parcelamento direto de verdade para facilitar a renovação do seu celular.</p>
+                <p>A única que offers parcelamento direto de verdade para facilitar a renovação do seu celular.</p>
             </div>
             <div class="feature-card">
                 <span class="f-icon">🔧</span>
