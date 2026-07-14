@@ -16,7 +16,6 @@
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
         body { background: var(--dark); color: white; overflow-x: hidden; scroll-behavior: smooth; }
         
-        /* HEADER / NAVBAR */
         header { 
             padding: 20px 50px; 
             display: flex; 
@@ -46,7 +45,6 @@
         }
         .btn-nav-contact:hover { background: #943be3; transform: translateY(-2px); }
 
-        /* HERO SECTION */
         .hero-section {
             max-width: 1300px;
             margin: 0 auto;
@@ -108,7 +106,6 @@
         }
         .hero-badge-item span { color: var(--primary); font-weight: bold; }
 
-        /* CONTAINER DE IMAGENS DO HERO COM EFEITOS ESPECIAIS ATRÁS */
         .hero-images-container {
             position: relative;
             width: 500px;
@@ -116,10 +113,9 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            overflow: visible; /* Permite que o brilho se expanda elegantemente */
+            overflow: visible;
         }
         
-        /* Brilho Roxo de Fundo (Glow) */
         .hero-purple-blur {
             position: absolute;
             width: 300px;
@@ -131,7 +127,6 @@
             pointer-events: none;
         }
 
-        /* Bolhas Brilhantes com Opacidade Baixa */
         .hero-bubble {
             position: absolute;
             background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, rgba(174, 82, 255, 0.05) 60%, rgba(174, 82, 255, 0) 100%);
@@ -141,39 +136,19 @@
             pointer-events: none;
             backdrop-filter: blur(1px);
         }
-        .bubble-1 {
-            width: 70px;
-            height: 70px;
-            top: 10%;
-            left: 15%;
-            animation: floatBubble1 8s ease-in-out infinite alternate;
-        }
-        .bubble-2 {
-            width: 110px;
-            height: 110px;
-            bottom: 15%;
-            right: 10%;
-            animation: floatBubble2 10s ease-in-out infinite alternate;
-        }
-        .bubble-3 {
-            width: 45px;
-            height: 45px;
-            bottom: 20%;
-            left: 20%;
-            animation: floatBubble1 6s ease-in-out infinite alternate-reverse;
-        }
+        .bubble-1 { width: 70px; height: 70px; top: 10%; left: 15%; animation: floatBubble1 8s ease-in-out infinite alternate; }
+        .bubble-2 { width: 110px; height: 110px; bottom: 15%; right: 10%; animation: floatBubble2 10s ease-in-out infinite alternate; }
+        .bubble-3 { width: 45px; height: 45px; bottom: 20%; left: 20%; animation: floatBubble1 6s ease-in-out infinite alternate-reverse; }
 
-        /* Imagem Principal Flutuante */
         .floating-iphone {
             position: relative;
             max-width: 100%;
             max-height: 430px;
             object-fit: contain;
-            z-index: 3; /* Fica acima do brilho e das bolhas */
+            z-index: 3;
             animation: floatSlow 6s ease-in-out infinite;
         }
 
-        /* Animações dos Efeitos */
         @keyframes floatSlow {
             0% { transform: translateY(0px) rotate(0deg); }
             50% { transform: translateY(-15px) rotate(1deg); }
@@ -188,7 +163,6 @@
             100% { transform: translateY(30px) translateX(-20px) scale(0.9); opacity: 0.8; }
         }
 
-        /* HIGHLIGHT CARD ROVERS */
         .top-highlight-section { padding: 20px 0; width: 100%; }
         .dynamic-card-container {
             position: relative;
@@ -222,7 +196,6 @@
         .top-card h3 { color: var(--primary); margin-bottom: 8px; font-size: 18px; font-weight: 800; text-transform: uppercase; }
         .top-card p { font-size: 14px; opacity: 0.9; }
 
-        /* TABELA DE PREÇOS */
         .section-title { text-align: center; padding: 70px 20px 20px; color: var(--primary); font-size: 28px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; }
         .section-subtitle { text-align: center; font-size: 14px; color: #888; margin-top: -10px; margin-bottom: 35px; }
         .price-table-section { padding: 20px; max-width: 1100px; margin: auto; }
@@ -230,7 +203,6 @@
         .price-table th { background: var(--primary); padding: 20px; text-align: left; font-size: 14px; text-transform: uppercase; color: white; }
         .price-table td { padding: 15px 20px; border-bottom: 1px solid var(--glass); font-size: 15px; }
 
-        /* CORREIOS INFO */
         .shipping-info { padding: 40px 20px; max-width: 1200px; margin: auto; }
         .shipping-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
         .ship-card { background: linear-gradient(145deg, #150226, #000); border: 1px solid rgba(174, 82, 255, 0.3); padding: 40px; border-radius: 25px; text-align: center; }
@@ -238,7 +210,6 @@
         .ship-card h3 { color: var(--primary); margin-bottom: 15px; font-size: 22px; font-weight: 800; text-transform: uppercase; }
         .ship-card p { font-size: 15px; line-height: 1.6; opacity: 0.9; }
 
-        /* CATALOGO DE PRODUTOS */
         .products { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; padding: 40px 20px; max-width: 1400px; margin: auto; }
         .card { background: var(--card); border: 1px solid var(--glass); border-radius: 20px; padding: 30px; text-align: center; display: flex; flex-direction: column; transition: 0.3s; }
         .card h3 { font-size: 18px; margin-bottom: 10px; font-weight: 700; color: #fff; }
@@ -247,7 +218,6 @@
         .btn-link { background: var(--primary); color: white; text-decoration: none; padding: 15px; border-radius: 12px; font-weight: 800; margin-top: auto; display: block; transition: 0.3s; }
         .btn-link:hover { background: #943be3; box-shadow: 0 0 15px rgba(174, 82, 255, 0.4); }
 
-        /* DIFERENCIAIS */
         .features-section { padding: 40px 20px; max-width: 1200px; margin: auto; }
         .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; }
         .feature-card { background: #0c0c0c; border: 1px solid rgba(255, 255, 255, 0.05); padding: 35px 30px; border-radius: 16px; transition: all 0.3s ease; position: relative; }
@@ -257,7 +227,6 @@
         .feature-card p { font-size: 14px; color: #aaa; line-height: 1.6; }
         .feature-card .badge-destaque { position: absolute; top: 15px; right: 20px; font-size: 10px; color: var(--primary); font-weight: 800; text-transform: uppercase; }
 
-        /* SOBRE */
         .about-metrics-section { padding: 60px 20px; max-width: 1200px; margin: auto; display: grid; grid-template-columns: 1.2fr 1fr; gap: 50px; align-items: center; }
         .about-text-side { border-left: 3px solid var(--primary); padding-left: 25px; }
         .about-text-side h2 { font-size: 28px; font-weight: 800; text-transform: uppercase; margin-bottom: 20px; }
@@ -268,7 +237,6 @@
         .metric-number { font-size: 32px; font-weight: 800; color: var(--primary); margin-bottom: 5px; }
         .metric-label { font-size: 11px; color: #888; text-transform: uppercase; font-weight: 700; }
 
-        /* CTA BANNER PRE-FEEDBACK */
         .cta-banner-section { 
             background: linear-gradient(180deg, #050505 0%, #150226 50%, #050505 100%); 
             padding: 80px 20px; 
@@ -296,42 +264,31 @@
         }
         .cta-banner-btn:hover { background: #943be3; transform: translateY(-2px); box-shadow: 0 6px 25px rgba(174, 82, 255, 0.5); }
 
-        /* DEPOIMENTOS */
         .deposits { background: #080808; padding: 80px 20px; border-top: 1px solid var(--glass); }
         .deposits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; max-width: 1300px; margin: auto; }
         .dep-card { background: #121212; padding: 25px; border-radius: 15px; border-left: 6px solid var(--primary); }
         .stars { color: #ffcc00; margin-bottom: 10px; font-size: 18px; }
         .dep-name { display: block; font-weight: 800; color: var(--primary); font-size: 15px; margin-top: 10px;}
 
-        /* SEGURANÇA */
         .security-badges { background: #0c0c0c; padding: 30px 20px; text-align: center; border-top: 1px solid var(--glass); }
         .badges-container { display: flex; justify-content: center; align-items: center; gap: 40px; flex-wrap: wrap; max-width: 1000px; margin: 0 auto; }
         .badge-item { display: flex; align-items: center; gap: 12px; color: #aaa; font-size: 13px; text-align: left; }
         .badge-item .badge-icon { font-size: 28px; color: var(--primary); }
         .badge-item b { color: #fff; display: block; font-size: 14px; }
 
-        /* WHATSAPP FLUTUANTE */
         .wa-float { position: fixed; bottom: 35px; right: 35px; background: var(--primary); width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 1000; box-shadow: 0 10px 25px rgba(174, 82, 255, 0.4); transition: 0.3s; }
         .wa-float:hover { transform: scale(1.05); background: #943be3; }
         
         footer { text-align: center; padding: 40px; opacity: 0.5; font-size: 12px; background: #0c0c0c; }
 
-        /* RESPONSIVIDADE (MOBILE CORRIGIDO) */
         @media (max-width: 992px) {
             .hero-section { flex-direction: column; text-align: center; padding: 40px 15px; min-height: auto; gap: 20px; }
             .hero-content { text-align: center; }
             .hero-content h1 { font-size: 32px; margin-bottom: 15px; }
             .hero-content p { font-size: 14px; margin-bottom: 25px; }
             .hero-badges { justify-content: center; margin-top: 25px; flex-wrap: wrap; }
-            
-            /* Ajuste dos efeitos e container no mobile */
             .hero-images-container { width: 100%; max-width: 320px; height: 300px; margin-top: 15px; }
             .floating-iphone { width: 100%; max-height: 280px; }
-            .hero-purple-blur { width: 220px; height: 220px; }
-            .bubble-1 { width: 40px; height: 40px; }
-            .bubble-2 { width: 65px; height: 65px; }
-            .bubble-3 { width: 30px; height: 30px; }
-
             .about-metrics-section { grid-template-columns: 1fr; gap: 30px; }
             header { padding: 20px; }
             nav { display: none; }
@@ -347,11 +304,10 @@
             <a href="#precos">Tabela de Preços</a>
             <a href="#catalogo">Catálogo</a>
             <a href="#quem-somos">Sobre</a>
-            <a href="https://wa.me/5511944967694" class="btn-nav-contact" target="_blank">Falar com a loja</a>
+            <a href="https://wa.me/5511948559200" class="btn-nav-contact" target="_blank">Falar com a loja</a>
         </nav>
     </header>
 
-    <!-- HERO SECTION -->
     <section class="hero-section">
         <div class="hero-content">
             <h1>Seu smartphone novo está aqui. <span>Parcelamento facilitado de verdade</span></h1>
@@ -365,7 +321,6 @@
             </div>
         </div>
 
-        <!-- CONTAINER DE IMAGENS COM OS NOVOS EFEITOS SOLICITADOS -->
         <div class="hero-images-container">
             <div class="hero-purple-blur"></div>
             <div class="hero-bubble bubble-1"></div>
@@ -375,7 +330,6 @@
         </div>
     </section>
 
-    <!-- CARD ROTATIVO DE DESTAQUE NO TOPO -->
     <section class="top-highlight-section">
         <div class="dynamic-card-container">
             <div class="top-card active">
@@ -445,26 +399,26 @@
     <div id="catalogo"></div>
     <h2 class="section-title">Catálogo de Dispositivos</h2>
     <div class="products">
-        <div class="card"><h3>iPhone 14 256GB</h3><p class="entrada">Entrada R$ 250</p><span class="parcela">16x R$ 210</span><a href="https://wa.me/5511944967694?text=Dispositivo%20selecionado:%20iPhone%2014%20-%20Capacidade:%20256GB%20-%20Entrada:%20R$250%20-%20Parcela:%2016x%20de%20R$210." class="btn-link">RESERVAR</a></div>
-        <div class="card"><h3>iPhone 14 Pro 256GB</h3><p class="entrada">Entrada R$ 375</p><span class="parcela">16x R$ 250</span><a href="https://wa.me/5511944967694?text=Dispositivo%20selecionado:%20iPhone%2014%20Pro%20-%20Capacidade:%20256GB%20-%20Entrada:%20R$375%20-%20Parcela:%2016x%20de%20R$250." class="btn-link">RESERVAR</a></div>
-        <div class="card"><h3>iPhone 14 Pro Max 256GB</h3><p class="entrada">Entrada R$ 400</p><span class="parcela">16x R$ 280</span><a href="https://wa.me/5511944967694?text=Dispositivo%20selecionado:%20iPhone%2014%20Pro%20Max%20-%20Capacidade:%20256GB%20-%20Entrada:%20R$400%20-%20Parcela:%2016x%20de%20R$280." class="btn-link">RESERVAR</a></div>
+        <div class="card"><h3>iPhone 14 256GB</h3><p class="entrada">Entrada R$ 250</p><span class="parcela">16x R$ 210</span><a href="https://wa.me/5511948559200?text=Dispositivo%20selecionado:%20iPhone%2014" class="btn-link">RESERVAR</a></div>
+        <div class="card"><h3>iPhone 14 Pro 256GB</h3><p class="entrada">Entrada R$ 375</p><span class="parcela">16x R$ 250</span><a href="https://wa.me/5511948559200?text=Dispositivo%20selecionado:%20iPhone%2014%20Pro" class="btn-link">RESERVAR</a></div>
+        <div class="card"><h3>iPhone 14 Pro Max 256GB</h3><p class="entrada">Entrada R$ 400</p><span class="parcela">16x R$ 280</span><a href="https://wa.me/5511948559200?text=Dispositivo%20selecionado:%20iPhone%2014%20Pro%20Max" class="btn-link">RESERVAR</a></div>
         
-        <div class="card"><h3>iPhone 15 256GB</h3><p class="entrada">Entrada R$ 250</p><span class="parcela">16x R$ 260</span><a href="https://wa.me/5511944967694?text=Dispositivo%20selecionado:%20iPhone%2015%20-%20Capacidade:%20256GB%20-%20Entrada:%20R$250%20-%20Parcela:%2016x%20de%20R$260." class="btn-link">RESERVAR</a></div>
-        <div class="card"><h3>iPhone 15 Plus 256GB</h3><p class="entrada">Entrada R$ 300</p><span class="parcela">16x R$ 290</span><a href="https://wa.me/5511944967694?text=Dispositivo%20selecionado:%20iPhone%2015%20Plus%20-%20Capacidade:%20256GB%20-%20Entrada:%20R$300%20-%20Parcela:%2016x%20de%20R$290." class="btn-link">RESERVAR</a></div>
-        <div class="card"><h3>iPhone 15 Pro 256GB</h3><p class="entrada">Entrada R$ 400</p><span class="parcela">16x R$ 380</span><a href="https://wa.me/5511944967694?text=Dispositivo%20selecionado:%20iPhone%2015%20Pro%20-%20Capacidade:%20256GB%20-%20Entrada:%20R$400%20-%20Parcela:%2016x%20de%20R$380." class="btn-link">RESERVAR</a></div>
-        <div class="card"><h3>iPhone 15 Pro Max 256GB</h3><p class="entrada">Entrada R$ 500</p><span class="parcela">16x R$ 420</span><a href="https://wa.me/5511944967694?text=Dispositivo%20selecionado:%20iPhone%2015%20Pro%20Max%20-%20Capacidade:%20256GB%20-%20Entrada:%20R$500%20-%20Parcela:%2016x%20de%20R$420." class="btn-link">RESERVAR</a></div>
+        <div class="card"><h3>iPhone 15 256GB</h3><p class="entrada">Entrada R$ 250</p><span class="parcela">16x R$ 260</span><a href="https://wa.me/5511948559200?text=Dispositivo%20selecionado:%20iPhone%2015" class="btn-link">RESERVAR</a></div>
+        <div class="card"><h3>iPhone 15 Plus 256GB</h3><p class="entrada">Entrada R$ 300</p><span class="parcela">16x R$ 290</span><a href="https://wa.me/5511948559200?text=Dispositivo%20selecionado:%20iPhone%2015%20Plus" class="btn-link">RESERVAR</a></div>
+        <div class="card"><h3>iPhone 15 Pro 256GB</h3><p class="entrada">Entrada R$ 400</p><span class="parcela">16x R$ 380</span><a href="https://wa.me/5511948559200?text=Dispositivo%20selecionado:%20iPhone%2015%20Pro" class="btn-link">RESERVAR</a></div>
+        <div class="card"><h3>iPhone 15 Pro Max 256GB</h3><p class="entrada">Entrada R$ 500</p><span class="parcela">16x R$ 420</span><a href="https://wa.me/5511948559200?text=Dispositivo%20selecionado:%20iPhone%2015%20Pro%20Max" class="btn-link">RESERVAR</a></div>
 
-        <div class="card"><h3>iPhone 16 256GB</h3><p class="entrada">Entrada R$ 500</p><span class="parcela">16x R$ 320</span><a href="https://wa.me/5511944967694?text=Dispositivo%20selecionado:%20iPhone%2016%20-%20Capacidade:%20256GB%20-%20Entrada:%20R$500%20-%20Parcela:%2016x%20de%20R$320." class="btn-link">RESERVAR</a></div>
-        <div class="card"><h3>iPhone 16 Pro 256GB</h3><p class="entrada">Entrada R$ 800</p><span class="parcela">16x R$ 470</span><a href="https://wa.me/5511944967694?text=Dispositivo%20selecionado:%20iPhone%2016%20Pro%20-%20Capacidade:%20256GB%20-%20Entrada:%20R$800%20-%20Parcela:%2016x%20de%20R$470." class="btn-link">RESERVAR</a></div>
-        <div class="card"><h3>iPhone 16 Pro Max 256GB</h3><p class="entrada">Entrada R$ 1000</p><span class="parcela">16x R$ 550</span><a href="https://wa.me/5511944967694?text=Dispositivo%20selecionado:%20iPhone%2016%20Pro%20Max%20-%20Capacidade:%20256GB%20-%20Entrada:%20R$1000%20-%20Parcela:%2016x%20de%20R$550." class="btn-link">RESERVAR</a></div>
+        <div class="card"><h3>iPhone 16 256GB</h3><p class="entrada">Entrada R$ 500</p><span class="parcela">16x R$ 320</span><a href="https://wa.me/5511948559200?text=Dispositivo%20selecionado:%20iPhone%2016" class="btn-link">RESERVAR</a></div>
+        <div class="card"><h3>iPhone 16 Pro 256GB</h3><p class="entrada">Entrada R$ 800</p><span class="parcela">16x R$ 470</span><a href="https://wa.me/5511948559200?text=Dispositivo%20selecionado:%20iPhone%2016%20Pro" class="btn-link">RESERVAR</a></div>
+        <div class="card"><h3>iPhone 16 Pro Max 256GB</h3><p class="entrada">Entrada R$ 1000</p><span class="parcela">16x R$ 550</span><a href="https://wa.me/5511948559200?text=Dispositivo%20selecionado:%20iPhone%2016%20Pro%20Max" class="btn-link">RESERVAR</a></div>
 
-        <div class="card"><h3>iPhone 17 Normal 256GB</h3><p class="entrada">Entrada R$ 500</p><span class="parcela">16x R$ 465</span><a href="https://wa.me/5511944967694?text=Dispositivo%20selecionado:%20iPhone%2017%20Normal%20-%20Capacidade:%20256GB%20-%20Entrada:%20R$500%20-%20Parcela:%2016x%20de%20R$465." class="btn-link">RESERVAR</a></div>
-        <div class="card"><h3>iPhone 17 Air 256GB</h3><p class="entrada">Entrada R$ 700</p><span class="parcela">16x R$ 610</span><a href="https://wa.me/5511944967694?text=Dispositivo%20selecionado:%20iPhone%2017%20Air%20-%20Capacidade:%20256GB%20-%20Entrada:%20R$700%20-%20Parcela:%2016x%20de%20R$610." class="btn-link">RESERVAR</a></div>
-        <div class="card"><h3>iPhone 17 Pro 256GB</h3><p class="entrada">Entrada R$ 1000</p><span class="parcela">16x R$ 665</span><a href="https://wa.me/5511944967694?text=Dispositivo%20selecionado:%20iPhone%2017%20Pro%20-%20Capacidade:%20256GB%20-%20Entrada:%20R$1000%20-%20Parcela:%2016x%20de%20R$665." class="btn-link">RESERVAR</a></div>
-        <div class="card"><h3>iPhone 17 Pro Max 256GB</h3><p class="entrada">Entrada R$ 1350</p><span class="parcela">16x R$ 715</span><a href="https://wa.me/5511944967694?text=Dispositivo%20selecionado:%20iPhone%2017%20Pro%20Max%20-%20Capacidade:%20256GB%20-%20Entrada:%20R$1350%20-%20Parcela:%2016x%20de%20R$715." class="btn-link">RESERVAR</a></div>
+        <div class="card"><h3>iPhone 17 Normal 256GB</h3><p class="entrada">Entrada R$ 500</p><span class="parcela">16x R$ 465</span><a href="https://wa.me/5511948559200?text=Dispositivo%20selecionado:%20iPhone%2017%20Normal" class="btn-link">RESERVAR</a></div>
+        <div class="card"><h3>iPhone 17 Air 256GB</h3><p class="entrada">Entrada R$ 700</p><span class="parcela">16x R$ 610</span><a href="https://wa.me/5511948559200?text=Dispositivo%20selecionado:%20iPhone%2017%20Air" class="btn-link">RESERVAR</a></div>
+        <div class="card"><h3>iPhone 17 Pro 256GB</h3><p class="entrada">Entrada R$ 1000</p><span class="parcela">16x R$ 665</span><a href="https://wa.me/5511948559200?text=Dispositivo%20selecionado:%20iPhone%2017%20Pro" class="btn-link">RESERVAR</a></div>
+        <div class="card"><h3>iPhone 17 Pro Max 256GB</h3><p class="entrada">Entrada R$ 1350</p><span class="parcela">16x R$ 715</span><a href="https://wa.me/5511948559200?text=Dispositivo%20selecionado:%20iPhone%2017%20Pro%20Max" class="btn-link">RESERVAR</a></div>
 
-        <div class="card"><h3>Xbox Series X 1TB</h3><p class="entrada">Entrada R$ 300</p><span class="parcela">16x R$ 265</span><a href="https://wa.me/5511944967694?text=Dispositivo%20selecionado:%20Xbox%20Series%20X%20-%20Capacidade:%201TB%20-%20Entrada:%20R$300%20-%20Parcela:%2016x%20de%20R$265." class="btn-link">COMPRAR</a></div>
-        <div class="card"><h3>PS5 Slim 1TB</h3><p class="entrada">Entrada R$ 300</p><span class="parcela">16x R$ 265</span><a href="https://wa.me/5511944967694?text=Dispositivo%20selecionado:%20PS5%20Slim%20-%20Capacidade:%201TB%20-%20Entrada:%20R$300%20-%20Parcela:%2016x%20de%20R$265." class="btn-link">COMPRAR</a></div>
+        <div class="card"><h3>Xbox Series X 1TB</h3><p class="entrada">Entrada R$ 300</p><span class="parcela">16x R$ 265</span><a href="https://wa.me/5511948559200?text=Dispositivo%20selecionado:%20Xbox%20Series%20X" class="btn-link">COMPRAR</a></div>
+        <div class="card"><h3>PS5 Slim 1TB</h3><p class="entrada">Entrada R$ 300</p><span class="parcela">16x R$ 265</span><a href="https://wa.me/5511948559200?text=Dispositivo%20selecionado:%20PS5%20Slim" class="btn-link">COMPRAR</a></div>
     </div>
 
     <div id="diferenciais"></div>
@@ -486,7 +440,7 @@
             <div class="feature-card">
                 <span class="f-icon">💳</span>
                 <h3>Facilidade de Pagamento</h3>
-                <p>A única que offers parcelamento direto de verdade para facilitar a renovação do seu celular.</p>
+                <p>A única que oferece parcelamento direto de verdade para facilitar a renovação do seu celular.</p>
             </div>
             <div class="feature-card">
                 <span class="f-icon">🔧</span>
@@ -538,7 +492,7 @@
         <div class="cta-banner-content">
             <h2>Pronto para seu novo <span>smartphone?</span></h2>
             <p>Fale com a Versus Tecnologia pelo WhatsApp e garanta o melhor celular com as melhores condições.</p>
-            <a href="https://wa.me/5511944967694?text=Ol%C3%A1,%20gostaria%20de%20saber%20mais%20sobre%20as%20condi%C3%A7%C3%B5es%20dos%20smartphones." class="cta-banner-btn" target="_blank">
+            <a href="https://wa.me/5511948559200" class="cta-banner-btn" target="_blank">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
                 Falar pelo WhatsApp
             </a>
@@ -575,7 +529,7 @@
         </div>
     </section>
 
-    <a href="https://wa.me/5511944967694" class="wa-float" target="_blank">
+    <a href="https://wa.me/5511948559200" class="wa-float" target="_blank">
         <svg width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
     </a>
 
