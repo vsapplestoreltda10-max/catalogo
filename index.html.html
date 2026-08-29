@@ -1,5 +1,5 @@
-```html
 <!DOCTYPE html>
+
 <html lang="pt-br">
 <head>
 <meta charset="UTF-8">
@@ -43,6 +43,10 @@ body{
     overflow-x:hidden;
 }
 
+img{
+    max-width:100%;
+}
+
 /* =========================
    HEADER
 ========================= */
@@ -72,12 +76,14 @@ header{
     height:52px;
     width:auto;
     object-fit:contain;
+    display:block;
 }
 
 nav{
     display:flex;
     align-items:center;
-    gap:8px;
+    justify-content:flex-end;
+    gap:5px;
 }
 
 nav a{
@@ -85,7 +91,7 @@ nav a{
     text-decoration:none;
     font-size:13px;
     font-weight:600;
-    padding:9px 13px;
+    padding:9px 11px;
     border-radius:10px;
     transition:.3s ease;
     white-space:nowrap;
@@ -99,7 +105,7 @@ nav a:hover{
 .btn-nav-contact{
     background:linear-gradient(135deg,var(--primary),var(--primary-dark)) !important;
     color:white !important;
-    padding:10px 18px !important;
+    padding:10px 15px !important;
     box-shadow:0 5px 20px var(--purple-glow);
 }
 
@@ -147,9 +153,7 @@ nav a:hover{
 }
 
 .btn-hero-catalog{
-    position:relative;
     display:inline-block;
-    overflow:hidden;
     background:linear-gradient(135deg,var(--primary),var(--primary-dark));
     color:white;
     text-decoration:none;
@@ -185,10 +189,6 @@ nav a:hover{
     color:var(--primary);
     margin-right:5px;
 }
-
-/* =========================
-   IPHONES DO TOPO
-========================= */
 
 .hero-images-container{
     position:relative;
@@ -242,7 +242,6 @@ nav a:hover{
     from{
         transform:translateY(0) translateX(0);
     }
-
     to{
         transform:translateY(-25px) translateX(15px);
     }
@@ -262,7 +261,6 @@ nav a:hover{
     0%,100%{
         transform:translateY(0) rotate(0deg);
     }
-
     50%{
         transform:translateY(-14px) rotate(1deg);
     }
@@ -406,10 +404,6 @@ nav a:hover{
     pointer-events:none;
 }
 
-/* =========================
-   SELOS
-========================= */
-
 .product-badge{
     position:absolute;
     top:15px;
@@ -431,10 +425,6 @@ nav a:hover{
     border-color:rgba(32,214,107,.25);
     background:rgba(32,214,107,.08);
 }
-
-/* =========================
-   IMAGENS
-========================= */
 
 .product-image{
     width:100%;
@@ -469,10 +459,6 @@ nav a:hover{
 .card:hover .product-image img{
     transform:scale(1.06);
 }
-
-/* =========================
-   INFORMAÇÕES DOS PRODUTOS
-========================= */
 
 .card h3{
     font-size:17px;
@@ -673,7 +659,7 @@ nav a:hover{
 }
 
 /* =========================
-   INFORMAÇÕES DA LOJA
+   LOJA
 ========================= */
 
 .store-section{
@@ -687,22 +673,13 @@ nav a:hover{
     grid-template-columns:1fr 1fr;
     gap:55px;
     align-items:center;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(174,82,255,.08),
-            rgba(255,255,255,.015)
-        );
-
+    background:linear-gradient(145deg,rgba(174,82,255,.08),rgba(255,255,255,.015));
     border:1px solid rgba(174,82,255,.18);
     border-radius:30px;
     padding:25px;
-
     box-shadow:
         0 25px 70px rgba(0,0,0,.45),
         inset 0 0 40px rgba(174,82,255,.025);
-
     backdrop-filter:blur(20px);
 }
 
@@ -713,19 +690,6 @@ nav a:hover{
     min-height:420px;
     background:#0b0b0b;
     border:1px solid rgba(255,255,255,.06);
-}
-
-.store-image::after{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:
-        linear-gradient(
-            180deg,
-            transparent 55%,
-            rgba(0,0,0,.55)
-        );
-    pointer-events:none;
 }
 
 .store-image img{
@@ -818,11 +782,7 @@ nav a:hover{
     display:inline-flex;
     align-items:center;
     justify-content:center;
-    background:linear-gradient(
-        135deg,
-        var(--primary),
-        var(--primary-dark)
-    );
+    background:linear-gradient(135deg,var(--primary),var(--primary-dark));
     color:white;
     text-decoration:none;
     padding:14px 22px;
@@ -835,7 +795,6 @@ nav a:hover{
 
 .store-button:hover{
     transform:translateY(-3px);
-    box-shadow:0 12px 30px rgba(174,82,255,.35);
 }
 
 /* =========================
@@ -1009,7 +968,7 @@ footer{
 }
 
 /* =========================
-   MOBILE
+   TABLET
 ========================= */
 
 @media(max-width:992px){
@@ -1029,25 +988,21 @@ footer{
 
     nav{
         width:100%;
-        overflow-x:auto;
-        justify-content:flex-start;
-        gap:4px;
-        padding:3px 0 5px;
-        scrollbar-width:none;
-    }
-
-    nav::-webkit-scrollbar{
-        display:none;
+        display:grid;
+        grid-template-columns:repeat(3,1fr);
+        gap:5px;
+        overflow:visible;
     }
 
     nav a{
-        flex-shrink:0;
+        width:100%;
+        text-align:center;
         font-size:10px;
-        padding:7px 10px;
+        padding:8px 4px;
     }
 
     .btn-nav-contact{
-        padding:7px 11px !important;
+        padding:8px 4px !important;
     }
 
     .hero-section{
@@ -1107,10 +1062,57 @@ footer{
     }
 }
 
+/* =========================
+   CELULAR
+========================= */
+
 @media(max-width:600px){
 
     html{
-        scroll-padding-top:105px;
+        scroll-padding-top:135px;
+    }
+
+    header{
+        padding:8px 8px 10px;
+    }
+
+    .header-top{
+        gap:7px;
+    }
+
+    .logo-img{
+        height:38px;
+    }
+
+    /*
+       MENU MOBILE:
+       3 COLUNAS x 2 LINHAS
+       SEM ROLAGEM LATERAL
+    */
+
+    nav{
+        width:100%;
+        display:grid;
+        grid-template-columns:repeat(3,1fr);
+        gap:4px;
+        overflow:visible;
+    }
+
+    nav a{
+        min-width:0;
+        width:100%;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        text-align:center;
+        font-size:9px;
+        line-height:1.1;
+        padding:8px 2px;
+        border-radius:8px;
+    }
+
+    nav .btn-nav-contact{
+        padding:8px 2px !important;
     }
 
     .section-title{
@@ -1261,1805 +1263,1011 @@ footer{
 }
 
 </style>
+
 </head>
 
 <body>
 
-<!-- =========================
-     HEADER
-========================= -->
-
 <header>
 
-    <div class="header-top">
-
-        <img
-            src="https://i.postimg.cc/65fDCpXM/Chat-GPT-Image-7-de-mai-de-2026-15-27-41.png"
-            class="logo-img"
-            alt="Versus Tecnologia"
-        >
-
-        <nav>
-
-            <a href="#diferenciais">
-                Diferenciais
-            </a>
-
-            <a href="#catalogo">
-                Catálogo
-            </a>
-
-            <a href="#quem-somos">
-                Sobre
-            </a>
-
-            <a href="#loja">
-                Loja Física
-            </a>
-
-            <a href="#feedback">
-                Avaliações
-            </a>
-
-            <a
-                href="https://wa.me/5511948559200"
-                class="btn-nav-contact"
-                target="_blank"
-            >
-                Falar com a loja
-            </a>
-
-        </nav>
-
-    </div>
-
-</header>
-
-
-<!-- =========================
-     HERO
-========================= -->
-
-<section class="hero-section">
-
-    <div class="hero-content">
-
-        <h1>
-            Seu smartphone novo está aqui.
-            <span>
-                Parcelamento facilitado de verdade.
-            </span>
-        </h1>
-
-        <p>
-            Adquira seu novo dispositivo de forma simples
-            e descomplicada através do nosso sistema de
-            <b>parcelamento direto no boleto bancário</b>.
-            Condições pensadas para facilitar sua compra.
-        </p>
-
-        <a
-            href="#catalogo"
-            class="btn-hero-catalog"
-        >
-            CONHECER O CATÁLOGO
-        </a>
-
-        <div class="hero-badges">
-
-            <div class="hero-badge-item">
-                <span>✓</span>
-                Produtos selecionados
-            </div>
-
-            <div class="hero-badge-item">
-                <span>✓</span>
-                Garantia nos aparelhos
-            </div>
-
-        </div>
-
-    </div>
-
-    <div class="hero-images-container">
-
-        <div class="hero-purple-blur"></div>
-
-        <div class="hero-bubble bubble-1"></div>
-        <div class="hero-bubble bubble-2"></div>
-        <div class="hero-bubble bubble-3"></div>
-
-        <img
-            src="https://i.ibb.co/PZws8y87/ESSSAAAAAAAAAAAA.png"
-            class="floating-iphone"
-            alt="iPhones Versus Tecnologia"
-        >
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     DESTAQUES
-========================= -->
-
-<section class="top-highlight-section">
-
-    <div class="dynamic-card-container">
-
-        <div class="top-card active">
-
-            <span class="icon">💳</span>
-
-            <h3>
-                PARCELAMENTO FACILITADO
-            </h3>
-
-            <p>
-                Consulte as condições disponíveis
-                diretamente com nossa equipe.
-            </p>
-
-        </div>
-
-        <div class="top-card">
-
-            <span class="icon">🛡️</span>
-
-            <h3>
-                COMPRA COM SEGURANÇA
-            </h3>
-
-            <p>
-                Atendimento dedicado para acompanhar
-                você durante sua compra.
-            </p>
-
-        </div>
-
-        <div class="top-card">
-
-            <span class="icon">📦</span>
-
-            <h3>
-                ENVIO PARA TODO O BRASIL
-            </h3>
-
-            <p>
-                Consulte prazo, modalidade de envio
-                e rastreamento com nossa equipe.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     CATÁLOGO
-========================= -->
-
-<section id="catalogo">
-
-    <h2 class="section-title">
-        Catálogo
-        <span>Premium</span>
-    </h2>
-
-    <p class="section-subtitle">
-        Escolha seu próximo dispositivo e consulte
-        nossas condições de pagamento.
-    </p>
-
-    <div class="products">
-
-
-        <!-- IPHONE 14 -->
-
-        <div class="card">
-
-            <span class="product-badge">
-                Destaque
-            </span>
-
-            <div class="product-image">
-
-                <img
-                    src="https://i.ibb.co/k65j17V6/i-Phone-14-Azul.png"
-                    alt="iPhone 14"
-                    loading="lazy"
-                    decoding="async"
-                >
-
-            </div>
-
-            <h3>iPhone 14</h3>
-
-            <div class="product-storage">
-                256GB
-            </div>
-
-            <div class="avista-label">
-                À vista
-            </div>
-
-            <div class="avista-price">
-                R$ 3.070
-            </div>
-
-            <div class="discount">
-                15% OFF
-            </div>
-
-            <div class="entrada">
-                Entrada R$ 250
-            </div>
-
-            <div class="parcela">
-                16x R$ 210
-            </div>
-
-            <div class="payment-info">
-                Consulte condições
-            </div>
-
-            <a
-                href="https://wa.me/5511948559200?text=Dispositivo%20selecionado:%20iPhone%2014%20256GB"
-                class="btn-link"
-                target="_blank"
-            >
-                RESERVAR
-            </a>
-
-        </div>
-
-
-        <!-- IPHONE 14 PRO -->
-
-        <div class="card">
-
-            <div class="product-image">
-
-                <img
-                    src="https://i.ibb.co/sS9N6Tt/i-Phone-14-Pro-Max-Deep-Purple.png"
-                    alt="iPhone 14 Pro"
-                    loading="lazy"
-                    decoding="async"
-                >
-
-            </div>
-
-            <h3>iPhone 14 Pro</h3>
-
-            <div class="product-storage">
-                256GB
-            </div>
-
-            <div class="avista-label">
-                À vista
-            </div>
-
-            <div class="avista-price">
-                R$ 3.720
-            </div>
-
-            <div class="discount">
-                15% OFF
-            </div>
-
-            <div class="entrada">
-                Entrada R$ 375
-            </div>
-
-            <div class="parcela">
-                16x R$ 250
-            </div>
-
-            <div class="payment-info">
-                Consulte condições
-            </div>
-
-            <a
-                href="https://wa.me/5511948559200?text=Dispositivo%20selecionado:%20iPhone%2014%20Pro%20256GB"
-                class="btn-link"
-                target="_blank"
-            >
-                RESERVAR
-            </a>
-
-        </div>
-
-
-        <!-- IPHONE 14 PRO MAX -->
-
-        <div class="card">
-
-            <span class="product-badge green">
-                Mais vendido
-            </span>
-
-            <div class="product-image">
-
-                <img
-                    src="https://i.ibb.co/sS9N6Tt/i-Phone-14-Pro-Max-Deep-Purple.png"
-                    alt="iPhone 14 Pro Max"
-                    loading="lazy"
-                    decoding="async"
-                >
-
-            </div>
-
-            <h3>iPhone 14 Pro Max</h3>
-
-            <div class="product-storage">
-                256GB
-            </div>
-
-            <div class="avista-label">
-                À vista
-            </div>
-
-            <div class="avista-price">
-                R$ 4.150
-            </div>
-
-            <div class="discount">
-                15% OFF
-            </div>
-
-            <div class="entrada">
-                Entrada R$ 400
-            </div>
-
-            <div class="parcela">
-                16x R$ 280
-            </div>
-
-            <div class="payment-info">
-                Consulte condições
-            </div>
-
-            <a
-                href="https://wa.me/5511948559200?text=Dispositivo%20selecionado:%20iPhone%2014%20Pro%20Max%20256GB"
-                class="btn-link"
-                target="_blank"
-            >
-                RESERVAR
-            </a>
-
-        </div>
-
-
-        <!-- IPHONE 15 -->
-
-        <div class="card">
-
-            <span class="product-badge green">
-                Mais vendido
-            </span>
-
-            <div class="product-image">
-
-                <img
-                    src="https://i.ibb.co/PGTf8vpk/i-Phone-15-Rosa.png"
-                    alt="iPhone 15"
-                    loading="lazy"
-                    decoding="async"
-                >
-
-            </div>
-
-            <h3>iPhone 15</h3>
-
-            <div class="product-storage">
-                256GB
-            </div>
-
-            <div class="avista-label">
-                À vista
-            </div>
-
-            <div class="avista-price">
-                R$ 3.750
-            </div>
-
-            <div class="discount">
-                15% OFF
-            </div>
-
-            <div class="entrada">
-                Entrada R$ 250
-            </div>
-
-            <div class="parcela">
-                16x R$ 260
-            </div>
-
-            <div class="payment-info">
-                Consulte condições
-            </div>
-
-            <a
-                href="https://wa.me/5511948559200?text=Dispositivo%20selecionado:%20iPhone%2015%20256GB"
-                class="btn-link"
-                target="_blank"
-            >
-                RESERVAR
-            </a>
-
-        </div>
-
-
-        <!-- IPHONE 15 PLUS -->
-
-        <div class="card">
-
-            <div class="product-image">
-
-                <img
-                    src="https://i.ibb.co/PGTf8vpk/i-Phone-15-Rosa.png"
-                    alt="iPhone 15 Plus"
-                    loading="lazy"
-                    decoding="async"
-                >
-
-            </div>
-
-            <h3>iPhone 15 Plus</h3>
-
-            <div class="product-storage">
-                256GB
-            </div>
-
-            <div class="avista-label">
-                À vista
-            </div>
-
-            <div class="avista-price">
-                R$ 4.200
-            </div>
-
-            <div class="discount">
-                15% OFF
-            </div>
-
-            <div class="entrada">
-                Entrada R$ 300
-            </div>
-
-            <div class="parcela">
-                16x R$ 290
-            </div>
-
-            <div class="payment-info">
-                Consulte condições
-            </div>
-
-            <a
-                href="https://wa.me/5511948559200?text=Dispositivo%20selecionado:%20iPhone%2015%20Plus%20256GB"
-                class="btn-link"
-                target="_blank"
-            >
-                RESERVAR
-            </a>
-
-        </div>
-
-
-        <!-- IPHONE 15 PRO -->
-
-        <div class="card">
-
-            <div class="product-image">
-
-                <img
-                    src="https://i.ibb.co/Q3rtkTPN/i-Phone-15-Pro-Max-Titanio-Natural.png"
-                    alt="iPhone 15 Pro"
-                    loading="lazy"
-                    decoding="async"
-                >
-
-            </div>
-
-            <h3>iPhone 15 Pro</h3>
-
-            <div class="product-storage">
-                256GB
-            </div>
-
-            <div class="avista-label">
-                À vista
-            </div>
-
-            <div class="avista-price">
-                R$ 5.510
-            </div>
-
-            <div class="discount">
-                15% OFF
-            </div>
-
-            <div class="entrada">
-                Entrada R$ 400
-            </div>
-
-            <div class="parcela">
-                16x R$ 380
-            </div>
-
-            <div class="payment-info">
-                Consulte condições
-            </div>
-
-            <a
-                href="https://wa.me/5511948559200?text=Dispositivo%20selecionado:%20iPhone%2015%20Pro%20256GB"
-                class="btn-link"
-                target="_blank"
-            >
-                RESERVAR
-            </a>
-
-        </div>
-
-
-        <!-- IPHONE 15 PRO MAX -->
-
-        <div class="card">
-
-            <span class="product-badge green">
-                Mais vendido
-            </span>
-
-            <div class="product-image">
-
-                <img
-                    src="https://i.ibb.co/Q3rtkTPN/i-Phone-15-Pro-Max-Titanio-Natural.png"
-                    alt="iPhone 15 Pro Max"
-                    loading="lazy"
-                    decoding="async"
-                >
-
-            </div>
-
-            <h3>iPhone 15 Pro Max</h3>
-
-            <div class="product-storage">
-                256GB
-            </div>
-
-            <div class="avista-label">
-                À vista
-            </div>
-
-            <div class="avista-price">
-                R$ 6.140
-            </div>
-
-            <div class="discount">
-                15% OFF
-            </div>
-
-            <div class="entrada">
-                Entrada R$ 500
-            </div>
-
-            <div class="parcela">
-                16x R$ 420
-            </div>
-
-            <div class="payment-info">
-                Consulte condições
-            </div>
-
-            <a
-                href="https://wa.me/5511948559200?text=Dispositivo%20selecionado:%20iPhone%2015%20Pro%20Max%20256GB"
-                class="btn-link"
-                target="_blank"
-            >
-                RESERVAR
-            </a>
-
-        </div>
-
-
-        <!-- IPHONE 16 -->
-
-        <div class="card">
-
-            <span class="product-badge">
-                Destaque
-            </span>
-
-            <div class="product-image">
-
-                <img
-                    src="https://i.ibb.co/nNzNR4cP/i-Phone-16-Azul.png"
-                    alt="iPhone 16"
-                    loading="lazy"
-                    decoding="async"
-                >
-
-            </div>
-
-            <h3>iPhone 16</h3>
-
-            <div class="product-storage">
-                256GB
-            </div>
-
-            <div class="avista-label">
-                À vista
-            </div>
-
-            <div class="avista-price">
-                R$ 4.780
-            </div>
-
-            <div class="discount">
-                15% OFF
-            </div>
-
-            <div class="entrada">
-                Entrada R$ 500
-            </div>
-
-            <div class="parcela">
-                16x R$ 320
-            </div>
-
-            <div class="payment-info">
-                Consulte condições
-            </div>
-
-            <a
-                href="https://wa.me/5511948559200?text=Dispositivo%20selecionado:%20iPhone%2016%20256GB"
-                class="btn-link"
-                target="_blank"
-            >
-                RESERVAR
-            </a>
-
-        </div>
-
-
-        <!-- IPHONE 16 PRO -->
-
-        <div class="card">
-
-            <div class="product-image">
-
-                <img
-                    src="https://i.ibb.co/215Zwy74/i-Phone-16-Pro-Titanio-Branco.png"
-                    alt="iPhone 16 Pro"
-                    loading="lazy"
-                    decoding="async"
-                >
-
-            </div>
-
-            <h3>iPhone 16 Pro</h3>
-
-            <div class="product-storage">
-                256GB
-            </div>
-
-            <div class="avista-label">
-                À vista
-            </div>
-
-            <div class="avista-price">
-                R$ 7.070
-            </div>
-
-            <div class="discount">
-                15% OFF
-            </div>
-
-            <div class="entrada">
-                Entrada R$ 800
-            </div>
-
-            <div class="parcela">
-                16x R$ 470
-            </div>
-
-            <div class="payment-info">
-                Consulte condições
-            </div>
-
-            <a
-                href="https://wa.me/5511948559200?text=Dispositivo%20selecionado:%20iPhone%2016%20Pro%20256GB"
-                class="btn-link"
-                target="_blank"
-            >
-                RESERVAR
-            </a>
-
-        </div>
-
-
-        <!-- IPHONE 16 PRO MAX -->
-
-        <div class="card">
-
-            <span class="product-badge green">
-                Mais vendido
-            </span>
-
-            <div class="product-image">
-
-                <img
-                    src="https://i.ibb.co/215Zwy74/i-Phone-16-Pro-Titanio-Branco.png"
-                    alt="iPhone 16 Pro Max"
-                    loading="lazy"
-                    decoding="async"
-                >
-
-            </div>
-
-            <h3>iPhone 16 Pro Max</h3>
-
-            <div class="product-storage">
-                256GB
-            </div>
-
-            <div class="avista-label">
-                À vista
-            </div>
-
-            <div class="avista-price">
-                R$ 8.330
-            </div>
-
-            <div class="discount">
-                15% OFF
-            </div>
-
-            <div class="entrada">
-                Entrada R$ 1.000
-            </div>
-
-            <div class="parcela">
-                16x R$ 550
-            </div>
-
-            <div class="payment-info">
-                Consulte condições
-            </div>
-
-            <a
-                href="https://wa.me/5511948559200?text=Dispositivo%20selecionado:%20iPhone%2016%20Pro%20Max%20256GB"
-                class="btn-link"
-                target="_blank"
-            >
-                RESERVAR
-            </a>
-
-        </div>
-
-
-        <!-- IPHONE 17 -->
-
-        <div class="card">
-
-            <span class="product-badge">
-                Novidade
-            </span>
-
-            <div class="product-image">
-
-                <img
-                    src="https://i.ibb.co/gLpVDN1F/i-Phone-17-Lavanda.png"
-                    alt="iPhone 17"
-                    loading="lazy"
-                    decoding="async"
-                >
-
-            </div>
-
-            <h3>iPhone 17</h3>
-
-            <div class="product-storage">
-                256GB
-            </div>
-
-            <div class="avista-label">
-                À vista
-            </div>
-
-            <div class="avista-price">
-                R$ 6.750
-            </div>
-
-            <div class="discount">
-                15% OFF
-            </div>
-
-            <div class="entrada">
-                Entrada R$ 500
-            </div>
-
-            <div class="parcela">
-                16x R$ 465
-            </div>
-
-            <div class="payment-info">
-                Consulte condições
-            </div>
-
-            <a
-                href="https://wa.me/5511948559200?text=Dispositivo%20selecionado:%20iPhone%2017%20256GB"
-                class="btn-link"
-                target="_blank"
-            >
-                RESERVAR
-            </a>
-
-        </div>
-
-
-        <!-- IPHONE 17 AIR -->
-
-        <div class="card">
-
-            <div class="product-image">
-
-                <img
-                    src="https://i.ibb.co/F4XD2fdp/i-Phone-17-Air-Branco.png"
-                    alt="iPhone 17 Air"
-                    loading="lazy"
-                    decoding="async"
-                >
-
-            </div>
-
-            <h3>iPhone 17 Air</h3>
-
-            <div class="product-storage">
-                256GB
-            </div>
-
-            <div class="avista-label">
-                À vista
-            </div>
-
-            <div class="avista-price">
-                R$ 8.890
-            </div>
-
-            <div class="discount">
-                15% OFF
-            </div>
-
-            <div class="entrada">
-                Entrada R$ 700
-            </div>
-
-            <div class="parcela">
-                16x R$ 610
-            </div>
-
-            <div class="payment-info">
-                Consulte condições
-            </div>
-
-            <a
-                href="https://wa.me/5511948559200?text=Dispositivo%20selecionado:%20iPhone%2017%20Air%20256GB"
-                class="btn-link"
-                target="_blank"
-            >
-                RESERVAR
-            </a>
-
-        </div>
-
-
-        <!-- IPHONE 17 PRO -->
-
-        <div class="card">
-
-            <span class="product-badge">
-                Destaque
-            </span>
-
-            <div class="product-image">
-
-                <img
-                    src="https://i.ibb.co/JRmSkVV0/i-Phone-17-Pro-Silver.png"
-                    alt="iPhone 17 Pro"
-                    loading="lazy"
-                    decoding="async"
-                >
-
-            </div>
-
-            <h3>iPhone 17 Pro</h3>
-
-            <div class="product-storage">
-                256GB
-            </div>
-
-            <div class="avista-label">
-                À vista
-            </div>
-
-            <div class="avista-price">
-                R$ 9.890
-            </div>
-
-            <div class="discount">
-                15% OFF
-            </div>
-
-            <div class="entrada">
-                Entrada R$ 1.000
-            </div>
-
-            <div class="parcela">
-                16x R$ 665
-            </div>
-
-            <div class="payment-info">
-                Consulte condições
-            </div>
-
-            <a
-                href="https://wa.me/5511948559200?text=Dispositivo%20selecionado:%20iPhone%2017%20Pro%20256GB"
-                class="btn-link"
-                target="_blank"
-            >
-                RESERVAR
-            </a>
-
-        </div>
-
-
-        <!-- IPHONE 17 PRO MAX -->
-
-        <div class="card">
-
-            <span class="product-badge green">
-                Mais vendido
-            </span>
-
-            <div class="product-image">
-
-                <img
-                    src="https://i.ibb.co/JRmSkVV0/i-Phone-17-Pro-Silver.png"
-                    alt="iPhone 17 Pro Max"
-                    loading="lazy"
-                    decoding="async"
-                >
-
-            </div>
-
-            <h3>iPhone 17 Pro Max</h3>
-
-            <div class="product-storage">
-                256GB
-            </div>
-
-            <div class="avista-label">
-                À vista
-            </div>
-
-            <div class="avista-price">
-                R$ 10.870
-            </div>
-
-            <div class="discount">
-                15% OFF
-            </div>
-
-            <div class="entrada">
-                Entrada R$ 1.350
-            </div>
-
-            <div class="parcela">
-                16x R$ 715
-            </div>
-
-            <div class="payment-info">
-                Consulte condições
-            </div>
-
-            <a
-                href="https://wa.me/5511948559200?text=Dispositivo%20selecionado:%20iPhone%2017%20Pro%20Max%20256GB"
-                class="btn-link"
-                target="_blank"
-            >
-                RESERVAR
-            </a>
-
-        </div>
-
-
-        <!-- XBOX -->
-
-        <div class="card">
-
-            <span class="product-badge">
-                Console
-            </span>
-
-            <div class="product-image">
-
-                <img
-                    src="https://i.ibb.co/zVBgBddj/XBOX.png"
-                    alt="Xbox Series X"
-                    loading="lazy"
-                    decoding="async"
-                >
-
-            </div>
-
-            <h3>Xbox Series X</h3>
-
-            <div class="product-storage">
-                1TB
-            </div>
-
-            <div class="avista-label">
-                À vista
-            </div>
-
-            <div class="avista-price">
-                R$ 3.860
-            </div>
-
-            <div class="discount">
-                15% OFF
-            </div>
-
-            <div class="entrada">
-                Entrada R$ 300
-            </div>
-
-            <div class="parcela">
-                12x R$ 265
-            </div>
-
-            <div class="payment-info">
-                Consulte condições
-            </div>
-
-            <a
-                href="https://wa.me/5511948559200?text=Dispositivo%20selecionado:%20Xbox%20Series%20X%201TB"
-                class="btn-link"
-                target="_blank"
-            >
-                COMPRAR
-            </a>
-
-        </div>
-
-
-        <!-- PS5 -->
-
-        <div class="card">
-
-            <span class="product-badge green">
-                Mais vendido
-            </span>
-
-            <div class="product-image">
-
-                <img
-                    src="https://i.ibb.co/jks6Bb64/pngtree-top-quality-playstation-5-console-isolated-png-image-15514648.png"
-                    alt="PlayStation 5 Slim"
-                    loading="lazy"
-                    decoding="async"
-                >
-
-            </div>
-
-            <h3>PlayStation 5 Slim</h3>
-
-            <div class="product-storage">
-                1TB
-            </div>
-
-            <div class="avista-label">
-                À vista
-            </div>
-
-            <div class="avista-price">
-                R$ 3.860
-            </div>
-
-            <div class="discount">
-                15% OFF
-            </div>
-
-            <div class="entrada">
-                Entrada R$ 300
-            </div>
-
-            <div class="parcela">
-                12x R$ 265
-            </div>
-
-            <div class="payment-info">
-                Consulte condições
-            </div>
-
-            <a
-                href="https://wa.me/5511948559200?text=Dispositivo%20selecionado:%20PlayStation%205%20Slim%201TB"
-                class="btn-link"
-                target="_blank"
-            >
-                COMPRAR
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     DIFERENCIAIS
-========================= -->
-
-<section id="diferenciais">
-
-    <h2 class="section-title">
-        Por que escolher a
-        <span>Versus?</span>
-    </h2>
-
-    <p class="section-subtitle">
-        Uma experiência pensada para tornar
-        sua compra mais simples e transparente.
-    </p>
-
-    <section class="features-section">
-
-        <div class="features-grid">
-
-            <div class="feature-card">
-
-                <span class="badge-destaque">
-                    Destaque
-                </span>
-
-                <span class="f-icon">
-                    🛡️
-                </span>
-
-                <h3>
-                    Garantia
-                </h3>
-
-                <p>
-                    Conte com suporte e atendimento
-                    para acompanhar sua compra.
-                </p>
-
-            </div>
-
-            <div class="feature-card">
-
-                <span class="f-icon">
-                    🔧
-                </span>
-
-                <h3>
-                    Suporte Especializado
-                </h3>
-
-                <p>
-                    Nossa equipe está disponível para
-                    auxiliar durante sua experiência.
-                </p>
-
-            </div>
-
-            <div class="feature-card">
-
-                <span class="f-icon">
-                    💳
-                </span>
-
-                <h3>
-                    Facilidade de Pagamento
-                </h3>
-
-                <p>
-                    Condições de pagamento pensadas
-                    para facilitar sua aquisição.
-                </p>
-
-            </div>
-
-            <div class="feature-card">
-
-                <span class="f-icon">
-                    📱
-                </span>
-
-                <h3>
-                    Dispositivos Premium
-                </h3>
-
-                <p>
-                    Smartphones e consoles selecionados
-                    para quem busca tecnologia.
-                </p>
-
-            </div>
-
-            <div class="feature-card">
-
-                <span class="f-icon">
-                    ⚡
-                </span>
-
-                <h3>
-                    Atendimento Rápido
-                </h3>
-
-                <p>
-                    Fale diretamente com nossa equipe
-                    pelo WhatsApp.
-                </p>
-
-            </div>
-
-            <div class="feature-card">
-
-                <span class="f-icon">
-                    📦
-                </span>
-
-                <h3>
-                    Envio
-                </h3>
-
-                <p>
-                    Consulte as opções de envio,
-                    prazo e rastreamento disponíveis.
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-</section>
-
-
-<!-- =========================
-     SOBRE
-========================= -->
-
-<section id="quem-somos">
-
-    <section class="about-metrics-section">
-
-        <div class="about-text-side">
-
-            <h2>
-                Quem é a
-                <span>Versus Tecnologia?</span>
-            </h2>
-
-            <p>
-                A Versus Tecnologia nasceu com o
-                propósito de oferecer tecnologia,
-                atendimento próximo e condições
-                acessíveis aos nossos clientes.
-            </p>
-
-            <p>
-                Trabalhamos com smartphones,
-                consoles e produtos selecionados,
-                buscando proporcionar uma experiência
-                de compra simples e profissional.
-            </p>
-
-            <p>
-                Nosso atendimento é realizado diretamente
-                com nossa equipe pelo WhatsApp.
-            </p>
-
-        </div>
-
-        <div class="metrics-grid-side">
-
-            <div class="metric-box">
-
-                <div class="metric-number">
-                    100%
-                </div>
-
-                <div class="metric-label">
-                    Selecionados
-                </div>
-
-            </div>
-
-            <div class="metric-box">
-
-                <div class="metric-number">
-                    16x
-                </div>
-
-                <div class="metric-label">
-                    Condição
-                </div>
-
-            </div>
-
-            <div class="metric-box">
-
-                <div class="metric-number">
-                    5★
-                </div>
-
-                <div class="metric-label">
-                    Atendimento
-                </div>
-
-            </div>
-
-            <div class="metric-box">
-
-                <div class="metric-number">
-                    BR
-                </div>
-
-                <div class="metric-label">
-                    Envio Nacional
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-</section>
-
-
-<!-- =========================
-     LOJA FÍSICA
-========================= -->
-
-<section id="loja" class="store-section">
-
-    <div class="store-container">
-
-        <div class="store-image">
-
-            <img
-                src="https://i.ibb.co/jPSwY2Kj/Whats-App-Image-2026-08-28-at-23-46-18.jpg"
-                alt="Atendimento presencial na Versus Tecnologia"
-                loading="lazy"
-                decoding="async"
-            >
-
-        </div>
-
-        <div class="store-content">
-
-            <span class="store-label">
-                NOSSA LOJA
-            </span>
-
-            <h2>
-                Atendimento presencial e
-                <span>suporte especializado</span> pra você.
-            </h2>
-
-            <p>
-                Além do nosso atendimento online,
-                a <b>Versus Tecnologia</b> também conta
-                com atendimento presencial para
-                proporcionar uma experiência ainda
-                mais próxima e profissional.
-            </p>
-
-            <div class="store-info-box">
-
-                <div class="store-info-item">
-
-                    <span>
-                        📍
-                    </span>
-
-                    <div>
-
-                        <strong>
-                            Endereço
-                        </strong>
-
-                        <p>
-                            Av. Paulista, 1106 - Bela Vista<br>
-                            Andar 2, Sala 16<br>
-                            São Paulo - SP
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <div class="store-info-item">
-
-                    <span>
-                        🏢
-                    </span>
-
-                    <div>
-
-                        <strong>
-                            Empresa
-                        </strong>
-
-                        <p>
-                            Versus Tecnologia<br>
-                            CNPJ: 55.317.837/0001-50
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <div class="store-info-item">
-
-                    <span>
-                        💬
-                    </span>
-
-                    <div>
-
-                        <strong>
-                            Atendimento
-                        </strong>
-
-                        <p>
-                            Fale com nossa equipe pelo WhatsApp
-                            ou visite nossa loja física.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            <a
-                href="https://wa.me/5511948559200"
-                class="store-button"
-                target="_blank"
-            >
-                FALAR COM A LOJA
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     CTA
-========================= -->
-
-<section class="cta-banner-section">
-
-    <div class="cta-banner-content">
-
-        <h2>
-            Pronto para seu novo
-            <span>smartphone?</span>
-        </h2>
-
-        <p>
-            Escolha seu dispositivo no catálogo
-            ou fale diretamente com nossa equipe.
-        </p>
+```
+<div class="header-top">
+
+    <img
+        src="https://i.postimg.cc/65fDCpXM/Chat-GPT-Image-7-de-mai-de-2026-15-27-41.png"
+        class="logo-img"
+        alt="Versus Tecnologia"
+    >
+
+    <nav>
+
+        <a href="#diferenciais">Diferenciais</a>
+        <a href="#catalogo">Catálogo</a>
+        <a href="#quem-somos">Sobre</a>
+        <a href="#loja">Loja Física</a>
+        <a href="#feedback">Avaliações</a>
 
         <a
             href="https://wa.me/5511948559200"
-            class="cta-banner-btn"
+            class="btn-nav-contact"
             target="_blank"
+            rel="noopener noreferrer"
         >
-            💬
-            Falar pelo WhatsApp
+            Falar com a loja
+        </a>
+
+    </nav>
+
+</div>
+```
+
+</header>
+
+<section class="hero-section">
+
+```
+<div class="hero-content">
+
+    <h1>
+        Seu smartphone novo está aqui.
+        <span>
+            Parcelamento facilitado de verdade.
+        </span>
+    </h1>
+
+    <p>
+        Adquira seu novo dispositivo de forma simples
+        e descomplicada através do nosso sistema de
+        <b>parcelamento direto no boleto bancário</b>.
+        Condições pensadas para facilitar sua compra.
+    </p>
+
+    <a
+        href="#catalogo"
+        class="btn-hero-catalog"
+    >
+        CONHECER O CATÁLOGO
+    </a>
+
+    <div class="hero-badges">
+
+        <div class="hero-badge-item">
+            <span>✓</span>
+            Produtos selecionados
+        </div>
+
+        <div class="hero-badge-item">
+            <span>✓</span>
+            Garantia nos aparelhos
+        </div>
+
+    </div>
+
+</div>
+
+<div class="hero-images-container">
+
+    <div class="hero-purple-blur"></div>
+
+    <div class="hero-bubble bubble-1"></div>
+    <div class="hero-bubble bubble-2"></div>
+    <div class="hero-bubble bubble-3"></div>
+
+    <img
+        src="https://i.ibb.co/PZws8y87/ESSSAAAAAAAAAAAA.png"
+        class="floating-iphone"
+        alt="iPhones Versus Tecnologia"
+    >
+
+</div>
+```
+
+</section>
+
+<section class="top-highlight-section">
+
+```
+<div class="dynamic-card-container">
+
+    <div class="top-card active">
+
+        <span class="icon">💳</span>
+
+        <h3>
+            PARCELAMENTO FACILITADO
+        </h3>
+
+        <p>
+            Consulte as condições disponíveis
+            diretamente com nossa equipe.
+        </p>
+
+    </div>
+
+    <div class="top-card">
+
+        <span class="icon">🛡️</span>
+
+        <h3>
+            COMPRA COM SEGURANÇA
+        </h3>
+
+        <p>
+            Atendimento dedicado para acompanhar
+            você durante sua compra.
+        </p>
+
+    </div>
+
+    <div class="top-card">
+
+        <span class="icon">📦</span>
+
+        <h3>
+            ENVIO PARA TODO O BRASIL
+        </h3>
+
+        <p>
+            Consulte prazo, modalidade de envio
+            e rastreamento com nossa equipe.
+        </p>
+
+    </div>
+
+</div>
+```
+
+</section>
+
+<section id="catalogo">
+
+```
+<h2 class="section-title">
+    Catálogo
+    <span>Premium</span>
+</h2>
+
+<p class="section-subtitle">
+    Escolha seu próximo dispositivo e consulte
+    nossas condições de pagamento.
+</p>
+
+<div class="products">
+
+    <div class="card">
+        <span class="product-badge">Destaque</span>
+
+        <div class="product-image">
+            <img src="https://i.ibb.co/k65j17V6/i-Phone-14-Azul.png" alt="iPhone 14" loading="lazy" decoding="async">
+        </div>
+
+        <h3>iPhone 14</h3>
+        <div class="product-storage">256GB</div>
+
+        <div class="avista-label">À vista</div>
+        <div class="avista-price">R$ 3.070</div>
+
+        <div class="discount">15% OFF</div>
+
+        <div class="entrada">Entrada R$ 250</div>
+        <div class="parcela">16x R$ 210</div>
+
+        <div class="payment-info">Consulte condições</div>
+
+        <a href="https://wa.me/5511948559200?text=Dispositivo%20selecionado:%20iPhone%2014%20256GB" class="btn-link" target="_blank" rel="noopener noreferrer">
+            RESERVAR
+        </a>
+    </div>
+
+    <div class="card">
+
+        <div class="product-image">
+            <img src="https://i.ibb.co/sS9N6Tt/i-Phone-14-Pro-Max-Deep-Purple.png" alt="iPhone 14 Pro" loading="lazy" decoding="async">
+        </div>
+
+        <h3>iPhone 14 Pro</h3>
+        <div class="product-storage">256GB</div>
+
+        <div class="avista-label">À vista</div>
+        <div class="avista-price">R$ 3.720</div>
+
+        <div class="discount">15% OFF</div>
+
+        <div class="entrada">Entrada R$ 375</div>
+        <div class="parcela">16x R$ 250</div>
+
+        <div class="payment-info">Consulte condições</div>
+
+        <a href="https://wa.me/5511948559200?text=Dispositivo%20selecionado:%20iPhone%2014%20Pro%20256GB" class="btn-link" target="_blank" rel="noopener noreferrer">
+            RESERVAR
         </a>
 
     </div>
 
+    <div class="card">
+
+        <span class="product-badge green">Mais vendido</span>
+
+        <div class="product-image">
+            <img src="https://i.ibb.co/sS9N6Tt/i-Phone-14-Pro-Max-Deep-Purple.png" alt="iPhone 14 Pro Max" loading="lazy" decoding="async">
+        </div>
+
+        <h3>iPhone 14 Pro Max</h3>
+        <div class="product-storage">256GB</div>
+
+        <div class="avista-label">À vista</div>
+        <div class="avista-price">R$ 4.150</div>
+
+        <div class="discount">15% OFF</div>
+
+        <div class="entrada">Entrada R$ 400</div>
+        <div class="parcela">16x R$ 280</div>
+
+        <div class="payment-info">Consulte condições</div>
+
+        <a href="https://wa.me/5511948559200?text=Dispositivo%20selecionado:%20iPhone%2014%20Pro%20Max%20256GB" class="btn-link" target="_blank" rel="noopener noreferrer">
+            RESERVAR
+        </a>
+
+    </div>
+
+    <div class="card">
+
+        <span class="product-badge green">Mais vendido</span>
+
+        <div class="product-image">
+            <img src="https://i.ibb.co/PGTf8vpk/i-Phone-15-Rosa.png" alt="iPhone 15" loading="lazy" decoding="async">
+        </div>
+
+        <h3>iPhone 15</h3>
+        <div class="product-storage">256GB</div>
+
+        <div class="avista-label">À vista</div>
+        <div class="avista-price">R$ 3.750</div>
+
+        <div class="discount">15% OFF</div>
+
+        <div class="entrada">Entrada R$ 250</div>
+        <div class="parcela">16x R$ 260</div>
+
+        <div class="payment-info">Consulte condições</div>
+
+        <a href="https://wa.me/5511948559200?text=Dispositivo%20selecionado:%20iPhone%2015%20256GB" class="btn-link" target="_blank" rel="noopener noreferrer">
+            RESERVAR
+        </a>
+
+    </div>
+
+    <div class="card">
+
+        <div class="product-image">
+            <img src="https://i.ibb.co/PGTf8vpk/i-Phone-15-Rosa.png" alt="iPhone 15 Plus" loading="lazy" decoding="async">
+        </div>
+
+        <h3>iPhone 15 Plus</h3>
+        <div class="product-storage">256GB</div>
+
+        <div class="avista-label">À vista</div>
+        <div class="avista-price">R$ 4.200</div>
+
+        <div class="discount">15% OFF</div>
+
+        <div class="entrada">Entrada R$ 300</div>
+        <div class="parcela">16x R$ 290</div>
+
+        <div class="payment-info">Consulte condições</div>
+
+        <a href="https://wa.me/5511948559200?text=Dispositivo%20selecionado:%20iPhone%2015%20Plus%20256GB" class="btn-link" target="_blank" rel="noopener noreferrer">
+            RESERVAR
+        </a>
+
+    </div>
+
+    <div class="card">
+
+        <div class="product-image">
+            <img src="https://i.ibb.co/Q3rtkTPN/i-Phone-15-Pro-Max-Titanio-Natural.png" alt="iPhone 15 Pro" loading="lazy" decoding="async">
+        </div>
+
+        <h3>iPhone 15 Pro</h3>
+        <div class="product-storage">256GB</div>
+
+        <div class="avista-label">À vista</div>
+        <div class="avista-price">R$ 5.510</div>
+
+        <div class="discount">15% OFF</div>
+
+        <div class="entrada">Entrada R$ 400</div>
+        <div class="parcela">16x R$ 380</div>
+
+        <div class="payment-info">Consulte condições</div>
+
+        <a href="https://wa.me/5511948559200?text=Dispositivo%20selecionado:%20iPhone%2015%20Pro%20256GB" class="btn-link" target="_blank" rel="noopener noreferrer">
+            RESERVAR
+        </a>
+
+    </div>
+
+    <div class="card">
+
+        <span class="product-badge green">Mais vendido</span>
+
+        <div class="product-image">
+            <img src="https://i.ibb.co/Q3rtkTPN/i-Phone-15-Pro-Max-Titanio-Natural.png" alt="iPhone 15 Pro Max" loading="lazy" decoding="async">
+        </div>
+
+        <h3>iPhone 15 Pro Max</h3>
+        <div class="product-storage">256GB</div>
+
+        <div class="avista-label">À vista</div>
+        <div class="avista-price">R$ 6.140</div>
+
+        <div class="discount">15% OFF</div>
+
+        <div class="entrada">Entrada R$ 500</div>
+        <div class="parcela">16x R$ 420</div>
+
+        <div class="payment-info">Consulte condições</div>
+
+        <a href="https://wa.me/5511948559200?text=Dispositivo%20selecionado:%20iPhone%2015%20Pro%20Max%20256GB" class="btn-link" target="_blank" rel="noopener noreferrer">
+            RESERVAR
+        </a>
+
+    </div>
+
+    <div class="card">
+
+        <span class="product-badge">Destaque</span>
+
+        <div class="product-image">
+            <img src="https://i.ibb.co/nNzNR4cP/i-Phone-16-Azul.png" alt="iPhone 16" loading="lazy" decoding="async">
+        </div>
+
+        <h3>iPhone 16</h3>
+        <div class="product-storage">256GB</div>
+
+        <div class="avista-label">À vista</div>
+        <div class="avista-price">R$ 4.780</div>
+
+        <div class="discount">15% OFF</div>
+
+        <div class="entrada">Entrada R$ 500</div>
+        <div class="parcela">16x R$ 320</div>
+
+        <div class="payment-info">Consulte condições</div>
+
+        <a href="https://wa.me/5511948559200?text=Dispositivo%20selecionado:%20iPhone%2016%20256GB" class="btn-link" target="_blank" rel="noopener noreferrer">
+            RESERVAR
+        </a>
+
+    </div>
+
+    <div class="card">
+
+        <div class="product-image">
+            <img src="https://i.ibb.co/215Zwy74/i-Phone-16-Pro-Titanio-Branco.png" alt="iPhone 16 Pro" loading="lazy" decoding="async">
+        </div>
+
+        <h3>iPhone 16 Pro</h3>
+        <div class="product-storage">256GB</div>
+
+        <div class="avista-label">À vista</div>
+        <div class="avista-price">R$ 7.070</div>
+
+        <div class="discount">15% OFF</div>
+
+        <div class="entrada">Entrada R$ 800</div>
+        <div class="parcela">16x R$ 470</div>
+
+        <div class="payment-info">Consulte condições</div>
+
+        <a href="https://wa.me/5511948559200?text=Dispositivo%20selecionado:%20iPhone%2016%20Pro%20256GB" class="btn-link" target="_blank" rel="noopener noreferrer">
+            RESERVAR
+        </a>
+
+    </div>
+
+    <div class="card">
+
+        <span class="product-badge green">Mais vendido</span>
+
+        <div class="product-image">
+            <img src="https://i.ibb.co/215Zwy74/i-Phone-16-Pro-Titanio-Branco.png" alt="iPhone 16 Pro Max" loading="lazy" decoding="async">
+        </div>
+
+        <h3>iPhone 16 Pro Max</h3>
+        <div class="product-storage">256GB</div>
+
+        <div class="avista-label">À vista</div>
+        <div class="avista-price">R$ 8.330</div>
+
+        <div class="discount">15% OFF</div>
+
+        <div class="entrada">Entrada R$ 1.000</div>
+        <div class="parcela">16x R$ 550</div>
+
+        <div class="payment-info">Consulte condições</div>
+
+        <a href="https://wa.me/5511948559200?text=Dispositivo%20selecionado:%20iPhone%2016%20Pro%20Max%20256GB" class="btn-link" target="_blank" rel="noopener noreferrer">
+            RESERVAR
+        </a>
+
+    </div>
+
+    <div class="card">
+
+        <span class="product-badge">Novidade</span>
+
+        <div class="product-image">
+            <img src="https://i.ibb.co/gLpVDN1F/i-Phone-17-Lavanda.png" alt="iPhone 17" loading="lazy" decoding="async">
+        </div>
+
+        <h3>iPhone 17</h3>
+        <div class="product-storage">256GB</div>
+
+        <div class="avista-label">À vista</div>
+        <div class="avista-price">R$ 6.750</div>
+
+        <div class="discount">15% OFF</div>
+
+        <div class="entrada">Entrada R$ 500</div>
+        <div class="parcela">16x R$ 465</div>
+
+        <div class="payment-info">Consulte condições</div>
+
+        <a href="https://wa.me/5511948559200?text=Dispositivo%20selecionado:%20iPhone%2017%20256GB" class="btn-link" target="_blank" rel="noopener noreferrer">
+            RESERVAR
+        </a>
+
+    </div>
+
+    <div class="card">
+
+        <div class="product-image">
+            <img src="https://i.ibb.co/F4XD2fdp/i-Phone-17-Air-Branco.png" alt="iPhone 17 Air" loading="lazy" decoding="async">
+        </div>
+
+        <h3>iPhone 17 Air</h3>
+        <div class="product-storage">256GB</div>
+
+        <div class="avista-label">À vista</div>
+        <div class="avista-price">R$ 8.890</div>
+
+        <div class="discount">15% OFF</div>
+
+        <div class="entrada">Entrada R$ 700</div>
+        <div class="parcela">16x R$ 610</div>
+
+        <div class="payment-info">Consulte condições</div>
+
+        <a href="https://wa.me/5511948559200?text=Dispositivo%20selecionado:%20iPhone%2017%20Air%20256GB" class="btn-link" target="_blank" rel="noopener noreferrer">
+            RESERVAR
+        </a>
+
+    </div>
+
+    <div class="card">
+
+        <span class="product-badge">Destaque</span>
+
+        <div class="product-image">
+            <img src="https://i.ibb.co/JRmSkVV0/i-Phone-17-Pro-Silver.png" alt="iPhone 17 Pro" loading="lazy" decoding="async">
+        </div>
+
+        <h3>iPhone 17 Pro</h3>
+        <div class="product-storage">256GB</div>
+
+        <div class="avista-label">À vista</div>
+        <div class="avista-price">R$ 9.890</div>
+
+        <div class="discount">15% OFF</div>
+
+        <div class="entrada">Entrada R$ 1.000</div>
+        <div class="parcela">16x R$ 665</div>
+
+        <div class="payment-info">Consulte condições</div>
+
+        <a href="https://wa.me/5511948559200?text=Dispositivo%20selecionado:%20iPhone%2017%20Pro%20256GB" class="btn-link" target="_blank" rel="noopener noreferrer">
+            RESERVAR
+        </a>
+
+    </div>
+
+    <div class="card">
+
+        <span class="product-badge green">Mais vendido</span>
+
+        <div class="product-image">
+            <img src="https://i.ibb.co/JRmSkVV0/i-Phone-17-Pro-Silver.png" alt="iPhone 17 Pro Max" loading="lazy" decoding="async">
+        </div>
+
+        <h3>iPhone 17 Pro Max</h3>
+        <div class="product-storage">256GB</div>
+
+        <div class="avista-label">À vista</div>
+        <div class="avista-price">R$ 10.870</div>
+
+        <div class="discount">15% OFF</div>
+
+        <div class="entrada">Entrada R$ 1.350</div>
+        <div class="parcela">16x R$ 715</div>
+
+        <div class="payment-info">Consulte condições</div>
+
+        <a href="https://wa.me/5511948559200?text=Dispositivo%20selecionado:%20iPhone%2017%20Pro%20Max%20256GB" class="btn-link" target="_blank" rel="noopener noreferrer">
+            RESERVAR
+        </a>
+
+    </div>
+
+    <div class="card">
+
+        <span class="product-badge">Console</span>
+
+        <div class="product-image">
+            <img src="https://i.ibb.co/zVBgBddj/XBOX.png" alt="Xbox Series X" loading="lazy" decoding="async">
+        </div>
+
+        <h3>Xbox Series X</h3>
+        <div class="product-storage">1TB</div>
+
+        <div class="avista-label">À vista</div>
+        <div class="avista-price">R$ 3.860</div>
+
+        <div class="discount">15% OFF</div>
+
+        <div class="entrada">Entrada R$ 300</div>
+        <div class="parcela">12x R$ 265</div>
+
+        <div class="payment-info">Consulte condições</div>
+
+        <a href="https://wa.me/5511948559200?text=Dispositivo%20selecionado:%20Xbox%20Series%20X%201TB" class="btn-link" target="_blank" rel="noopener noreferrer">
+            COMPRAR
+        </a>
+
+    </div>
+
+    <div class="card">
+
+        <span class="product-badge green">Mais vendido</span>
+
+        <div class="product-image">
+            <img src="https://i.ibb.co/jks6Bb64/pngtree-top-quality-playstation-5-console-isolated-png-image-15514648.png" alt="PlayStation 5 Slim" loading="lazy" decoding="async">
+        </div>
+
+        <h3>PlayStation 5 Slim</h3>
+        <div class="product-storage">1TB</div>
+
+        <div class="avista-label">À vista</div>
+        <div class="avista-price">R$ 3.860</div>
+
+        <div class="discount">15% OFF</div>
+
+        <div class="entrada">Entrada R$ 300</div>
+        <div class="parcela">12x R$ 265</div>
+
+        <div class="payment-info">Consulte condições</div>
+
+        <a href="https://wa.me/5511948559200?text=Dispositivo%20selecionado:%20PlayStation%205%20Slim%201TB" class="btn-link" target="_blank" rel="noopener noreferrer">
+            COMPRAR
+        </a>
+
+    </div>
+
+</div>
+```
+
 </section>
 
+<section id="diferenciais">
 
-<!-- =========================
-     FEEDBACK
-========================= -->
+```
+<h2 class="section-title">
+    Por que escolher a
+    <span>Versus?</span>
+</h2>
+
+<p class="section-subtitle">
+    Uma experiência pensada para tornar
+    sua compra mais simples e transparente.
+</p>
+
+<section class="features-section">
+
+    <div class="features-grid">
+
+        <div class="feature-card">
+            <span class="badge-destaque">Destaque</span>
+            <span class="f-icon">🛡️</span>
+            <h3>Garantia</h3>
+            <p>Conte com suporte e atendimento para acompanhar sua compra.</p>
+        </div>
+
+        <div class="feature-card">
+            <span class="f-icon">🔧</span>
+            <h3>Suporte Especializado</h3>
+            <p>Nossa equipe está disponível para auxiliar durante sua experiência.</p>
+        </div>
+
+        <div class="feature-card">
+            <span class="f-icon">💳</span>
+            <h3>Facilidade de Pagamento</h3>
+            <p>Condições de pagamento pensadas para facilitar sua aquisição.</p>
+        </div>
+
+        <div class="feature-card">
+            <span class="f-icon">📱</span>
+            <h3>Dispositivos Premium</h3>
+            <p>Smartphones e consoles selecionados para quem busca tecnologia.</p>
+        </div>
+
+        <div class="feature-card">
+            <span class="f-icon">⚡</span>
+            <h3>Atendimento Rápido</h3>
+            <p>Fale diretamente com nossa equipe pelo WhatsApp.</p>
+        </div>
+
+        <div class="feature-card">
+            <span class="f-icon">📦</span>
+            <h3>Envio</h3>
+            <p>Consulte as opções de envio, prazo e rastreamento disponíveis.</p>
+        </div>
+
+    </div>
+
+</section>
+```
+
+</section>
+
+<section id="quem-somos">
+
+```
+<section class="about-metrics-section">
+
+    <div class="about-text-side">
+
+        <h2>
+            Quem é a
+            <span>Versus Tecnologia?</span>
+        </h2>
+
+        <p>
+            A Versus Tecnologia nasceu com o propósito de oferecer tecnologia,
+            atendimento próximo e condições acessíveis aos nossos clientes.
+        </p>
+
+        <p>
+            Trabalhamos com smartphones, consoles e produtos selecionados,
+            buscando proporcionar uma experiência de compra simples e profissional.
+        </p>
+
+        <p>
+            Nosso atendimento é realizado diretamente com nossa equipe pelo WhatsApp.
+        </p>
+
+    </div>
+
+    <div class="metrics-grid-side">
+
+        <div class="metric-box">
+            <div class="metric-number">100%</div>
+            <div class="metric-label">Selecionados</div>
+        </div>
+
+        <div class="metric-box">
+            <div class="metric-number">16x</div>
+            <div class="metric-label">Condição</div>
+        </div>
+
+        <div class="metric-box">
+            <div class="metric-number">5★</div>
+            <div class="metric-label">Atendimento</div>
+        </div>
+
+        <div class="metric-box">
+            <div class="metric-number">BR</div>
+            <div class="metric-label">Envio Nacional</div>
+        </div>
+
+    </div>
+
+</section>
+```
+
+</section>
+
+<section id="loja" class="store-section">
+
+```
+<div class="store-container">
+
+    <div class="store-image">
+
+        <img
+            src="https://i.ibb.co/jPSwY2Kj/Whats-App-Image-2026-08-28-at-23-46-18.jpg"
+            alt="Atendimento presencial na Versus Tecnologia"
+            loading="lazy"
+            decoding="async"
+        >
+
+    </div>
+
+    <div class="store-content">
+
+        <span class="store-label">NOSSA LOJA</span>
+
+        <h2>
+            Atendimento presencial e
+            <span>suporte especializado</span> pra você.
+        </h2>
+
+        <p>
+            Além do nosso atendimento online,
+            a <b>Versus Tecnologia</b> também conta
+            com atendimento presencial para
+            proporcionar uma experiência ainda
+            mais próxima e profissional.
+        </p>
+
+        <div class="store-info-box">
+
+            <div class="store-info-item">
+
+                <span>📍</span>
+
+                <div>
+
+                    <strong>Endereço</strong>
+
+                    <p>
+                        Av. Paulista, 1106 - Bela Vista<br>
+                        Andar 2, Sala 16<br>
+                        São Paulo - SP
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="store-info-item">
+
+                <span>🏢</span>
+
+                <div>
+
+                    <strong>Empresa</strong>
+
+                    <p>
+                        Versus Tecnologia<br>
+                        CNPJ: 55.317.837/0001-50
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="store-info-item">
+
+                <span>💬</span>
+
+                <div>
+
+                    <strong>Atendimento</strong>
+
+                    <p>
+                        Fale com nossa equipe pelo WhatsApp
+                        ou visite nossa loja física.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <a
+            href="https://wa.me/5511948559200"
+            class="store-button"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            FALAR COM A LOJA
+        </a>
+
+    </div>
+
+</div>
+```
+
+</section>
+
+<section class="cta-banner-section">
+
+```
+<div class="cta-banner-content">
+
+    <h2>
+        Pronto para seu novo
+        <span>smartphone?</span>
+    </h2>
+
+    <p>
+        Escolha seu dispositivo no catálogo
+        ou fale diretamente com nossa equipe.
+    </p>
+
+    <a
+        href="https://wa.me/5511948559200"
+        class="cta-banner-btn"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        💬 Falar pelo WhatsApp
+    </a>
+
+</div>
+```
+
+</section>
 
 <section id="feedback" class="deposits">
 
-    <h2 class="section-title">
-        Feedback dos
-        <span>Clientes</span>
-    </h2>
+```
+<h2 class="section-title">
+    Feedback dos
+    <span>Clientes</span>
+</h2>
 
-    <div class="deposits-grid">
+<div class="deposits-grid">
 
-        <div class="dep-card">
-
-            <div class="stars">
-                ★★★★★
-            </div>
-
-            <p>
-                "Meu iPhone chegou certinho
-                e o atendimento foi muito bom."
-            </p>
-
-            <span class="dep-name">
-                Felipe A.
-            </span>
-
-        </div>
-
-
-        <div class="dep-card">
-
-            <div class="stars">
-                ★★★★★
-            </div>
-
-            <p>
-                "Tirei todas as minhas dúvidas
-                pelo WhatsApp."
-            </p>
-
-            <span class="dep-name">
-                Juliana C.
-            </span>
-
-        </div>
-
-
-        <div class="dep-card">
-
-            <div class="stars">
-                ★★★★★
-            </div>
-
-            <p>
-                "Aparelho chegou perfeito.
-                Recomendo."
-            </p>
-
-            <span class="dep-name">
-                Bruno M.
-            </span>
-
-        </div>
-
-
-        <div class="dep-card">
-
-            <div class="stars">
-                ★★★★★
-            </div>
-
-            <p>
-                "Gostei muito do atendimento
-                e das condições."
-            </p>
-
-            <span class="dep-name">
-                Ricardo G.
-            </span>
-
-        </div>
-
-
-        <div class="dep-card">
-
-            <div class="stars">
-                ★★★★★
-            </div>
-
-            <p>
-                "Foi muito fácil tirar minhas dúvidas
-                e fazer o pedido."
-            </p>
-
-            <span class="dep-name">
-                Matheus R.
-            </span>
-
-        </div>
-
-
-        <div class="dep-card">
-
-            <div class="stars">
-                ★★★★★
-            </div>
-
-            <p>
-                "Atendimento rápido e aparelho
-                chegou conforme combinado."
-            </p>
-
-            <span class="dep-name">
-                Camila S.
-            </span>
-
-        </div>
-
+    <div class="dep-card">
+        <div class="stars">★★★★★</div>
+        <p>"Meu iPhone chegou certinho e o atendimento foi muito bom."</p>
+        <span class="dep-name">Felipe A.</span>
     </div>
 
+    <div class="dep-card">
+        <div class="stars">★★★★★</div>
+        <p>"Tirei todas as minhas dúvidas pelo WhatsApp."</p>
+        <span class="dep-name">Juliana C.</span>
+    </div>
+
+    <div class="dep-card">
+        <div class="stars">★★★★★</div>
+        <p>"Aparelho chegou perfeito. Recomendo."</p>
+        <span class="dep-name">Bruno M.</span>
+    </div>
+
+    <div class="dep-card">
+        <div class="stars">★★★★★</div>
+        <p>"Gostei muito do atendimento e das condições."</p>
+        <span class="dep-name">Ricardo G.</span>
+    </div>
+
+    <div class="dep-card">
+        <div class="stars">★★★★★</div>
+        <p>"Foi muito fácil tirar minhas dúvidas e fazer o pedido."</p>
+        <span class="dep-name">Matheus R.</span>
+    </div>
+
+    <div class="dep-card">
+        <div class="stars">★★★★★</div>
+        <p>"Atendimento rápido e aparelho chegou conforme combinado."</p>
+        <span class="dep-name">Camila S.</span>
+    </div>
+
+</div>
+```
+
 </section>
-
-
-<!-- =========================
-     SEGURANÇA
-========================= -->
 
 <section class="security-badges">
 
-    <div class="badges-container">
+```
+<div class="badges-container">
 
-        <div class="badge-item">
+    <div class="badge-item">
+        <span class="badge-icon">🔒</span>
 
-            <span class="badge-icon">
-                🔒
-            </span>
-
-            <div>
-
-                <b>
-                    SITE SEGURO
-                </b>
-
-                Navegação protegida
-
-            </div>
-
+        <div>
+            <b>SITE SEGURO</b>
+            Navegação protegida
         </div>
-
-
-        <div class="badge-item">
-
-            <span class="badge-icon">
-                🛡️
-            </span>
-
-            <div>
-
-                <b>
-                    ATENDIMENTO
-                </b>
-
-                Suporte pelo WhatsApp
-
-            </div>
-
-        </div>
-
-
-        <div class="badge-item">
-
-            <span class="badge-icon">
-                ✓
-            </span>
-
-            <div>
-
-                <b>
-                    PRODUTOS SELECIONADOS
-                </b>
-
-                Tecnologia de qualidade
-
-            </div>
-
-        </div>
-
     </div>
+
+    <div class="badge-item">
+        <span class="badge-icon">🛡️</span>
+
+        <div>
+            <b>ATENDIMENTO</b>
+            Suporte pelo WhatsApp
+        </div>
+    </div>
+
+    <div class="badge-item">
+        <span class="badge-icon">✓</span>
+
+        <div>
+            <b>PRODUTOS SELECIONADOS</b>
+            Tecnologia de qualidade
+        </div>
+    </div>
+
+</div>
+```
 
 </section>
 
-
-<!-- =========================
-     WHATSAPP
-========================= -->
-
 <a
-    href="https://wa.me/5511948559200"
-    class="wa-float"
-    target="_blank"
-    aria-label="Falar com a Versus Tecnologia"
+href="https://wa.me/5511948559200"
+class="wa-float"
+target="_blank"
+rel="noopener noreferrer"
+aria-label="Falar com a Versus Tecnologia"
+
 >
 
-    <svg
-        width="30"
-        height="30"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-    >
+```
+<svg
+    width="30"
+    height="30"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+>
 
-        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
 
-    </svg>
+</svg>
+```
 
 </a>
 
-
-<!-- =========================
-     FOOTER
-========================= -->
-
 <footer>
 
-    Versus Tecnologia © 2026
+```
+Versus Tecnologia © 2026
 
-    <br>
+<br>
 
-    CNPJ: 55.317.837/0001-50
+CNPJ: 55.317.837/0001-50
 
-    <br>
+<br>
 
-    Av. Paulista, 1106 - Bela Vista
-    — Andar 2, Sala 16
+Av. Paulista, 1106 - Bela Vista
+— Andar 2, Sala 16
 
-    <br>
+<br>
 
-    São Paulo - SP, Brasil
+São Paulo - SP, Brasil
+```
 
 </footer>
 
-
 <script>
 
-/* =========================
-   CARDS ROTATIVOS
-========================= */
-
-const topCards =
-    document.querySelectorAll('.top-card');
+const topCards = document.querySelectorAll('.top-card');
 
 let currentTopCard = 0;
 
 function changeTopCard(){
 
-    topCards[currentTopCard]
-        .classList
-        .remove('active');
+    if(!topCards.length) return;
+
+    topCards[currentTopCard].classList.remove('active');
 
     currentTopCard =
         (currentTopCard + 1) % topCards.length;
 
-    topCards[currentTopCard]
-        .classList
-        .add('active');
+    topCards[currentTopCard].classList.add('active');
 }
 
 setInterval(changeTopCard,4000);
 
-
-/* =========================
-   ANIMAÇÃO DOS PRODUTOS
-========================= */
 
 const productCards =
     document.querySelectorAll('.card');
@@ -3073,12 +2281,9 @@ const observer =
 
                     if(entry.isIntersecting){
 
-                        entry.target
-                            .classList
-                            .add('visible');
+                        entry.target.classList.add('visible');
 
-                        observer
-                            .unobserve(entry.target);
+                        observer.unobserve(entry.target);
 
                     }
 
@@ -3096,10 +2301,6 @@ productCards.forEach(
         observer.observe(card)
 );
 
-
-/* =========================
-   ANIMAÇÃO DIFERENCIAIS
-========================= */
 
 const featureCards =
     document.querySelectorAll('.feature-card');
@@ -3152,4 +2353,3 @@ featureCards.forEach(
 
 </body>
 </html>
-```
